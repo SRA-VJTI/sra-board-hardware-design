@@ -6,31 +6,33 @@ Sra board is a development board based on esp32 with peripherals like motor driv
 ![](/Documentation/assets/3d_sideview.png)
 
 ## Table of contents:
-- [About this project](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#About-this-project)
-- [What is development board](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#what-is-development-board-)
-    - [Power supply unit](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#Power-supply-unit)
-    - [Motor Driver](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#Motor-Driver)
-    - [Sensor port](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#Sensor-port)
-    - [Protection against reverse voltage and overcurrent](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#protection-against-reverse-voltage-and-overcurrent)
-    - [Programmable switches and leds](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#Programmable-switches-and-leds)
-    - [Power on/off switch](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#power-onoff-switch)
-- [Images of the board](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#Images-of-the-board)
-- [Major changes made in the new design](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#major-changes-made-in-the-new-design)
-    - [7805 replaced by LM2596 buck](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#78055v-linear-regulator-replaced-by-lm2596-buck-circuit)
-    - [ld33 replaced by AMS1117](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#ld3333v-replaced-by-ams1117)
-    - [Reverse voltage protection diodes replaced by pmosfet](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#diodes-for-reverse-voltage-replaced-by-p-type-mosfet)
-    - [L298N replaced by TB6612FNG](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#l298n-replaced-by-tb6612fng)
-    - [4 motor channels and modes of motor driver](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#4-motor-channels-and-normal-parallel-mode-of-motor-driver)
-    - [switch to bar graph led and more no. of switches](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)
-- [3D model](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#3d-model)
-- [Current Status](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#Current-Status)
-- [Designer](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#Designer)
-- [License](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/README.md#License)
+- [About this project](https://github.com/SRA-VJTI/sraboard-hardware-design#about-this-project)
+- [What is development board](https://github.com/SRA-VJTI/sraboard-hardware-design#what-is-development-board-)
+    - [Power supply unit](https://github.com/SRA-VJTI/sraboard-hardware-design#power-supply-unit)
+    - [Motor Driver](https://github.com/SRA-VJTI/sraboard-hardware-design#motor-driver)
+    - [Sensor port](https://github.com/SRA-VJTI/sraboard-hardware-design#sensor-port)
+    - [Protection against reverse voltage and overcurrent](https://github.com/SRA-VJTI/sraboard-hardware-design#protection-against-reverse-voltage-and-overcurrent)
+    - [Programmable switches and leds](https://github.com/SRA-VJTI/sraboard-hardware-design#programmable-switches-and-leds)
+    - [Power on/off switch](https://github.com/SRA-VJTI/sraboard-hardware-design#power-onoff-switch)
+- [Images of the board](https://github.com/SRA-VJTI/sraboard-hardware-design#images-of-the-board)
+- [Major changes made in the new design](https://github.com/SRA-VJTI/sraboard-hardware-design#major-changes-made-in-the-new-design)
+    - [7805 replaced by LM2596 buck](https://github.com/SRA-VJTI/sraboard-hardware-design#78055v-linear-regulator-replaced-by-lm2596-buck-circuit)
+    - [ld33 replaced by AMS1117](https://github.com/SRA-VJTI/sraboard-hardware-design#ld3333v-replaced-by-ams1117)
+    - [Reverse voltage protection diodes replaced by pmosfet](https://github.com/SRA-VJTI/sraboard-hardware-design#diodes-for-reverse-voltage-replaced-by-p-type-mosfet)
+    - [L298N replaced by TB6612FNG](https://github.com/SRA-VJTI/sraboard-hardware-design#l298n-replaced-by-tb6612fng)
+    - [4 motor channels and modes of motor driver](https://github.com/SRA-VJTI/sraboard-hardware-design#4-motor-channels-and-normal-parallel-mode-of-motor-driver)
+    - [switch to bar graph led and more no. of switches](https://github.com/SRA-VJTI/sraboard-hardware-design#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)
+- [Problems and their solutions](https://github.com/SRA-VJTI/sraboard-hardware-design#Problems-and-their-solutions)
+    - [Simultaneous power supply issue](https://github.com/SRA-VJTI/sraboard-hardware-design#Simultaneous-power-supply-issue)
+- [3D model](https://github.com/SRA-VJTI/sraboard-hardware-design#3d-model)
+- [Current Status](https://github.com/SRA-VJTI/sraboard-hardware-design#Current-Status)
+- [Designer](https://github.com/SRA-VJTI/sraboard-hardware-design#Designer)
+- [License](https://github.com/SRA-VJTI/sraboard-hardware-design#License)
 
 
 ## About this project:
 - sra board is esp32 based development board used for Wall E and MARIO workshop conducted by  [SRA](https://github.com/SRA-VJTI) 
-- Designed using eagle. Board and schematic files are [here](https://github.com/ombhilare999/SRA-BOARD-2020/tree/master/Eagle)  
+- Designed using eagle. Board and schematic files are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/Eagle)  
 
 ## What is development board ?
 
@@ -67,9 +69,9 @@ In general every development board like sra board have following basic features:
     - Similarly there is a MCU switch for esp32 microcontroller using which microcontroller can be turned on or off.
 
 ## Images of the board:
-- Images of SRA board 2020 are [here](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/Images/sra_board_images.md#images-of-sra-board-2020)
+- Images of SRA board 2020 are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/Images/sra_board_images.md#images-of-sra-board-2020)
 
->Now that we covered basic of development board, let's talk about changes made in the new design.(for more detailed info of sra board 2019 checkout this [pdf](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/Documentation/assets/Sra-board-2019.pdf))
+>Now that we covered basic of development board, let's talk about changes made in the new design.(for more detailed info of sra board 2019 checkout this [pdf](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/Documentation/assets/Sra-board-2019.pdf)
 
 ## Major changes made in the new design:
 - ### **7805(5V linear regulator) replaced by [LM2596 buck](https://www.youtube.com/watch?v=m8rK9gU30v4) circuit:**
@@ -91,7 +93,7 @@ In general every development board like sra board have following basic features:
         <img width="460" height="300" src="https://i1.wp.com/dronebotworkshop.com/wp-content/uploads/2019/12/TB6612-vs-L298N.jpeg?w=768&ssl=1">
     </p>
 
-- ### **4 motor channels and normal, parallel mode of motor driver**:<br /><br />
+- ### **4 motor channels and normal, parallel mode of motor driver**:
     - In previous year sra board one L298N was used using which can only control two motors as l298n as two motor channels but in this year 2x TB6612FNG  motor driver is used so maximum 4 motors can be controlled using esp32.
     - Motor driver can be worked in two modes **Normal mode** and **parallel mode**:   
         1. **Normal Mode**:<br />
@@ -120,12 +122,31 @@ In general every development board like sra board have following basic features:
         1. According to the lsa data we can program 4 leds to turn on when line sensor detects white color and turn off for black color with this feature debugging will be easy.
         2. If motor is moving in forward direction according to that dedicated leds will be turn on indicating IN1 is high and IN2 is low because of this motion of the bot can be debugged.
 
+
+## Problems and their solutions:
+
+- ### **Simultaneous power supply issue**:
+    - Esp32 can be power using two ways. First way is via the usb port given on the esp32 and second way is powering esp32 via providing voltage on vin pin.
+    - In previous year sra board if simultaneous power was given to the esp32 then it won't work as there was no circuitry for such condition and it is also mention on esp32 site.
+    > *The power supply must be provided using one and only one of the options above, otherwise the board and/or the power supply source can be damaged.*
+    - So if we want both simultaneous power to work then we need some external circuit to handle this condition and accordingly pass only one signal to the esp32 board.
+    - #### Solution:
+        - The solution for this issue was [diode auctioneering](http://doerry.org/norbert/papers/20190606-doerry-ashton-auctioneering-diodes.pdf)
+
+        <p align="center">
+            <img width="460" height="300" src="/Documentation/assets/diode_vin.jpeg">
+        </p>
+
+        - There is inbuilt BAT760 diode on the usb line on esp32.
+        - In short if different voltages are applied at Vusb and Vin then the voltage with bigger magnitude will be given to LD1117 (LDO on esp32), most of the time the voltage will be the same on Vin and vsub i.e 5V.
+        - But  as I planned to use 1N5417 diode on vin path which has more **vf** (forward voltage) than bat760 so here voltage indifference will be created and in simultaneous power supply condition usb will be selected as its voltage will be more than vin.
+
 ## 3D model:
 
 - 3D preview of *[SRA BOARD](https://a360.co/3c1Rjyv)*.
 
-    1. Complete 3D model file of  [SRA_BOARD](https://github.com/ombhilare999/SRA-BOARD-2020/tree/master/3D%20models/sra_board_model)
-    2. 3D models of motor driver, leds, esp32 etc. all are here :  [3d models of other components](https://github.com/ombhilare999/SRA-BOARD-2020/tree/master/3D%20models/Other_components_model)
+    1. Complete 3D model file of  [SRA_BOARD](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3D%20models/sra_board_model)
+    2. 3D models of motor driver, leds, esp32 etc. all are here :  [3d models of other components](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3D%20models/Other_components_model)
 
 
 ## Current Status:
@@ -137,7 +158,7 @@ In general every development board like sra board have following basic features:
 - SRA BOARD 2020 was designed by [omkar bhilare](https://github.com/ombhilare999)
 
 ## License:
-- [MIT License](https://github.com/ombhilare999/SRA-BOARD-2020/blob/master/LICENSE)
+- [MIT License](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/LICENSE)
 
 
 
