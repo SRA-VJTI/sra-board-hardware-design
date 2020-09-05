@@ -3,19 +3,18 @@
 <br />
 
 <p align="center">
-  <a href="https://github.com/laukik-hase/OTA_update_STM32_using_ESP32">
-    <img src="/Documentation/assets/logo.png" alt="Logo" width="160" height="160">
+  <a href="https://github.com/SRA-VJTI/sraboard-hardware-design">
+    <img src="/Documentation/assets/logo.png" alt="Logo" width="240" height="120">
   </a>
 
   <h3 align="center">SRA BOARD</h3>
   <p align="center">
     ESP32 based SRA board for robotics application
     <br />
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/Eagle"></a>
     <br />
-    <a href="https://github.com/laukik-hase/OTA_update_STM32_using_ESP32/">Eagle</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/Eagle">Eagle</a>
     ·
-    <a href="https://github.com/laukik-hase/OTA_update_STM32_using_ESP32/issues">Gerber</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/Gerber%20files/CAMOutputs">Gerber</a>
     ·
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/Images/sra_board_images.md">Images</a>
     ·
@@ -31,7 +30,7 @@ SRA board is a development board based on ESP32 with peripherals on board like p
 
 ## Table of contents:
 - [About this project](#about-this-project)
-- [what is a development board](#what-is-a-development-board-)
+- [what is a development board](#what-is-a-development-board)
     - [Power supply unit](#power-supply-unit)
     - [Motor Driver](#motor-driver)
     - [Sensor port](#sensor-port)
@@ -160,7 +159,7 @@ In general, every development board like SRA board have the following basic feat
         - The solution for this issue was [diode auctioneering](http://doerry.org/norbert/papers/20190606-doerry-ashton-auctioneering-diodes.pdf)
 
         <p align="center">
-            <img width="460" height="300" src="/Documentation/assets/diode_vin.jpeg">
+            <img width="460" height="300" src="/Documentation/assets/diode_vin.png">
         </p>
 
         - There is inbuilt BAT760 diode on the USB line on ESP32.
