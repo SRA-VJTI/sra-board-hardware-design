@@ -1,4 +1,3 @@
-
 <!-- PROJECT LOGO -->
 <br />
 
@@ -14,7 +13,7 @@
     <br />
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle">Eagle</a>
     ·
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/gerber%20files/camoutputs">Gerber</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/gerber_files/camoutputs">Gerber</a>
     ·
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/images/sra_board_images.md">Images</a>
     ·
@@ -197,6 +196,7 @@ In general, every development board like SRA board have the following basic feat
 ## Contributors:
 
 - [Omkar Bhilare](https://github.com/ombhilare999): *Designer*
+- [Dhiraj Patil](https://github.com/dhirajp15): *Mentor*
 - [Saurabh Gupta](https://github.com/saurabh1002): *Mentor*
 - [Udit Patadia](https://github.com/udit7395): *Mentor*
 - [Laukik hase](https://github.com/laukik-hase): *Mentor*
