@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/SRA-VJTI/sraboard-hardware-design">
-    <img src="/Documentation/assets/logo.png" alt="Logo" width="200" height="120">
+    <img src="/documentation/assets/logo.png" alt="Logo" width="200" height="120">
   </a>
 
   <h3 align="center">SRA BOARD</h3>
@@ -26,7 +26,7 @@
 
 SRA board is a development board based on ESP32 with peripherals on board like programmable LEDs and switches, sensor ports, over current and reverse voltage protection circuit and finally the motor drivers.
 
-![](/Documentation/assets/3d_sideview.png)
+![](/documentation/assets/3d_sideview.png)
 
 ## Table of contents:
 - [About this project](#about-this-project)
@@ -61,7 +61,7 @@ SRA board is a development board based on ESP32 with peripherals on board like p
 ## What is a development board?
 
 <p align="center">
-  <img width="460" height="300" src="/Documentation/assets/boards_compare.png">
+  <img width="460" height="300" src="/documentation/assets/boards_compare.png">
 </p>
 
 In general, every development board like SRA board have the following basic features:
@@ -95,7 +95,7 @@ In general, every development board like SRA board have the following basic feat
 ## Images of the board:
 - Images of SRA board 2020 are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/Images/sra_board_images.md#images-of-sra-board-2020)
 
-> Now that we covered basic of the development board, let's talk about changes made in the new design. (for more detailed info of SRA board 2019 checkout this [pdf](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/Documentation/assets/Sra-board-2019.pdf)
+> Now that we covered basic of the development board, let's talk about changes made in the new design. (for more detailed info of SRA board 2019 checkout this [pdf](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/documentation/assets/sra-board-2019.pdf)
 
 ## Major changes made in the new design:
 
@@ -134,7 +134,7 @@ In general, every development board like SRA board have the following basic feat
     - The motor driver can be worked in two modes **Normal mode** and **parallel mode**:   
         1. **Normal Mode**:<br />
         <p align="center">
-            <img width="460" height="300" src="/Documentation/assets/normal_mode.jpeg">
+            <img width="460" height="300" src="/documentation/assets/normal_mode.jpeg">
         </p>
 
         -  As discussed earlier in the new design there are two motor drivers. Each TB6612FNG can control two motors. Therefore, using two motor driver one can control 4 motors using 8 GPIO's of ESP32.
@@ -142,7 +142,7 @@ In general, every development board like SRA board have the following basic feat
         - So in normal mode, 4 motors can be connected to the board and one thing to be noted is per channel/motor the current capacity is 1.2 Amp.<br /><br />
         2. **Parallel Mode**:<br />
          <p align="center">
-            <img width="460" height="300" src="/Documentation/assets/parallel_mode.jpeg">
+            <img width="460" height="300" src="/documentation/assets/parallel_mode.jpeg">
         </p>
 
         -  Parallel mode is a special feature, it is used for high rated motors. if suppose your motor needs more than 1.2 amp current then for that motor parallel mode should be used.
@@ -171,7 +171,7 @@ In general, every development board like SRA board have the following basic feat
         - The solution for this issue was [diode auctioneering](http://doerry.org/norbert/papers/20190606-doerry-ashton-auctioneering-diodes.pdf)
 
         <p align="center">
-            <img width="460" height="300" src="/Documentation/assets/diode_vin.png">
+            <img width="460" height="300" src="/documentation/assets/diode_vin.png">
         </p>
 
         - There is inbuilt BAT760 diode on the USB line on ESP32.
