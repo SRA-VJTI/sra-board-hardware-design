@@ -98,6 +98,18 @@ In general, every development board like SRA board have the following basic feat
 > Now that we covered basic of the development board, let's talk about changes made in the new design. (for more detailed info of SRA board 2019 checkout this [pdf](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/Documentation/assets/Sra-board-2019.pdf)
 
 ## Major changes made in the new design:
+
+
+| Topic  |  SRA board 2019  | SRA board 2020|
+|:----:|:-------:| :-----: | 
+| [12V to 5V](#78055v-linear-regulator-replaced-by-lm2596-buck-circuit)  | 7805 linear regulator | LM2596 buck |
+|[5V to 3.3V](#ld3333v-replaced-by-ams1117)| LD33 | AMS1117 |
+|[reverse voltage proteciton](#diodes-for-reverse-voltage-replaced-by-P-MOSFET) | Diodes | P-MOSFET |
+|[Motor Driver](#l298n-replaced-by-tb6612fng)| L298N| TB6612FNG|
+|[No. of motor channels](#Modes-of-the-motor-driver)|2|4|
+|[No. of switches](#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)|2|4|
+|[No. of LEDs](#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)|2|8|
+
 - ### **7805(5V linear regulator) replaced by [LM2596 buck circuit](https://www.youtube.com/watch?v=m8rK9gU30v4):**
     - The reason for changing to buck circuit rather than using simple 7805 is the efficiency, output current and reliability of LM2596 is more than 7805.
     - The efficiency of LM2596 is up to 92% which is way better than 7805. The LM2596 can provide current up to 3 Amp so from now on servos in MARIO workshop can be run using onboard regulator itself.
