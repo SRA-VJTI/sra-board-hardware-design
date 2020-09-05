@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/SRA-VJTI/sraboard-hardware-design">
-    <img src="/Documentation/assets/logo.png" alt="Logo" width="240" height="120">
+    <img src="/Documentation/assets/logo.png" alt="Logo" width="200" height="120">
   </a>
 
   <h3 align="center">SRA BOARD</h3>
@@ -176,9 +176,9 @@ In general, every development board like SRA board have the following basic feat
 <!-- Milestone -->
 ## Milestone:
 - [x] Designing of the prototype board.
-- [x] Modular testing of circuit.
-- [ ] Testing of prototype board
-- [ ] Final version
+- [x] Modular testing of the circuit.
+- [ ] Testing of prototype board.
+- [ ] Final version.
 
 
 <!-- CONTRIBUTORS -->
@@ -192,7 +192,7 @@ In general, every development board like SRA board have the following basic feat
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
 ## Acknowledgements and Resources
 -   Thanks to [OSH](https://oshpark.com/) for providing us 100 dollars free coupon code for prototype boards.
--   Previous year design: [sra board 2019](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd)
+-   Previous year design: [SRA board 2019](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd)
 -   [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
 ## License:
