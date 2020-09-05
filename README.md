@@ -12,11 +12,11 @@
     ESP32 based SRA board for robotics application
     <br />
     <br />
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/Eagle">Eagle</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle">Eagle</a>
     ·
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/Gerber%20files/CAMOutputs">Gerber</a>
     ·
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/Images/sra_board_images.md">Images</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/images/sra_board_images.md">Images</a>
     ·
     <a href="https://a360.co/3c1Rjyv">3D model</a>
   </p>
@@ -56,7 +56,7 @@ SRA board is a development board based on ESP32 with peripherals on board like p
 
 ## About this project:
 - SRA board is ESP32 based development board used for Wall E and MARIO workshop conducted by  [SRA](https://github.com/SRA-VJTI) 
-- Designed using eagle. Board and schematic files are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/Eagle)  
+- Designed using eagle. Board and schematic files are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle)  
 
 ## What is a development board?
 
@@ -93,7 +93,7 @@ In general, every development board like SRA board have the following basic feat
     - Similarly, there is a microcontroller switch for ESP32 microcontroller using which microcontroller can be turned on or off.
 
 ## Images of the board:
-- Images of SRA board 2020 are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/Images/sra_board_images.md#images-of-sra-board-2020)
+- Images of SRA board 2020 are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/images/sra_board_images.md#images-of-sra-board-2020)
 
 > Now that we covered basic of the development board, let's talk about changes made in the new design. (for more detailed info of SRA board 2019 checkout this [pdf](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/documentation/assets/sra-board-2019.pdf)
 
