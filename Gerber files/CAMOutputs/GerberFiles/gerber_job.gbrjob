@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2020-09-05T15:19:04Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "SRA_20_V8.7"
+        },
+        "Owner": "ombhilare999 ombhilare999 <ombhilare999@gmail.com>",
+        "Size": {
+            "X": 81.408966,
+            "Y": 109.774919
+        }
+    }
+}
