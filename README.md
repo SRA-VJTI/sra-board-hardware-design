@@ -14,7 +14,7 @@
     <br />
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle">Eagle</a>
     ·
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/Gerber%20files/CAMOutputs">Gerber</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/gerber%20files/camoutputs">Gerber</a>
     ·
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/images/sra_board_images.md">Images</a>
     ·
