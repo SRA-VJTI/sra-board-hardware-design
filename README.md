@@ -6,209 +6,194 @@
     <img src="/documentation/assets/logo.png" alt="Logo" width="200" height="120">
   </a>
 
-  <h3 align="center">SRA BOARD</h3>
+  <h3 align="center">SRA Development Board</h3>
   <p align="center">
-    ESP32 based SRA board for robotics application
+    ESP32-based SRA Development Board
     <br />
-    <br />
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle">Eagle</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle">EAGLE</a>
     ·
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/gerber_files/camoutputs">Gerber</a>
     ·
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/images/sra_board_images.md">Images</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/**documentation**">Resources</a>
     ·
-    <a href="https://a360.co/3c1Rjyv">3D model</a>
+    <a href="https://a360.co/3c1Rjyv">3D Model</a>
   </p>
 </p>
 
-# SRA BOARD 2020
+# SRA Board 2020
 
-SRA board is a development board based on ESP32 with peripherals on board like programmable LEDs and switches, sensor ports, over current and reverse voltage protection circuit and finally the motor drivers.
+The SRA board is a development board based on ESP32 with on-board peripherals like programmable LEDs and switches, sensor ports for Line Sensor Array and MPU-6050, protection circuit for over-current and reverse voltage and motor drivers.
 
 ![](/documentation/assets/3d_sideview.png)
 
-## Table of contents:
-- [About this project](#about-this-project)
-- [what is a development board](#what-is-a-development-board)
-    - [Power supply unit](#power-supply-unit)
-    - [Motor Driver](#motor-driver)
-    - [Sensor port](#sensor-port)
-    - [Protection against reverse voltage and overcurrent](#protection-against-reverse-voltage-and-overcurrent)
-    - [Programmable switches and LEDs](#programmable-switches-and-LEDs)
-    - [Power on/off switch](#power-onoff-switch)
-- [Images of the board](#images-of-the-board)
-- [Major changes made in the new design](#major-changes-made-in-the-new-design)
-    - [7805 replaced by LM2596 buck](#78055v-linear-regulator-replaced-by-lm2596-buck-circuit)
-    - [ld33 replaced by AMS1117](#ld3333v-replaced-by-ams1117)
-    - [Reverse voltage protection diodes replaced by P-MOSFET](#diodes-for-reverse-voltage-replaced-by-P-MOSFET)
-    - [L298N replaced by TB6612FNG](#l298n-replaced-by-tb6612fng)
-    - [Modes of the motor driver](#Modes-of-the-motor-driver)
-    - [switch to bar graph led and more no. of switches](#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)
-- [Problems and their solutions](#Problems-and-their-solutions)
-    - [The simultaneous power supply issue](#The-simultaneous-power-supply-issue)
-- [3D model](#3d-model)
-- [Milestone](#Milestone)
-- [Contributors](#Contributors)
-- [Acknowledgements and Resources](#acknowledgements-and-resources)
-- [License](#License)
+## Table of Contents
+- [SRA Board 2020](#sra-board-2020)
+  - [Table of Contents](#table-of-contents)
+  - [About the Project](#about-the-project)
+  - [Getting Started with a Development Board](#getting-started-with-a-development-board)
+  - [Major Changes for 2020](#major-changes-for-2020)
+  - [Notable problems in the SRA Board 2019](#notable-problems-in-the-sra-board-2019)
+  - [3D Models](#3d-models)
+  - [Milestones](#milestones)
+  - [Contributors](#contributors)
+  - [Acknowledgements and Resources](#acknowledgements-and-resources)
+  - [License](#license)
 
 
-## About this project:
-- SRA board is ESP32 based development board used for Wall E and MARIO workshop conducted by  [SRA](https://github.com/SRA-VJTI) 
-- Designed using eagle. Board and schematic files are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle)  
+## About the Project
+- This development board is used for the [Wall-E](https://github.com/SRA-VJTI/Wall-E_v2.1) and [MARIO](https://github.com/SRA-VJTI/ROS-Workshop-2.1) workshops conducted by [SRA](https://github.com/SRA-VJTI).
+- Designed using EAGLE. The schematic and board files are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle). 
+- Resources for [previous work](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd).  For more details of the SRA board 2019, checkout this [link](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/documentation/assets/sra-board-2019.pdf).
+- The SRA board 2020 images can be found [here](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/documentation/images/).
 
-## What is a development board?
+## Getting Started with a Development Board
 
 <p align="center">
   <img width="460" height="300" src="/documentation/assets/boards_compare.png">
 </p>
 
-In general, every development board like SRA board have the following basic features:
+In general, every development board has the following basic features:
 
-- ### Power supply unit:
-  - Microcontroller usually runs on 3.3V or 5V and input to the development board is normally 12V because of the motors.
-  - So every development board has a power section which converts 12V to standard levels like 5V/ 3.3V for microcontroller and Sensors.
-  - In previous year SRA board 12V to 5V was converted using LM7805 linear regulator. Using this 5V ESP32 was powered.
-  - Further, this 5V was converted to 3.3V using LD33 linear voltage regulator. This 3.3V then given to the sensor port.
+- ### Power Supply Unit
+  - Microcontrollers (MCUs) usually run on 3.3V or 5V while input to a development board is normally 12V for motor control.
+  - So, a *power* section which converts this 12V to standard levels like 5V/3.3V for MCU and sensors is present.
+  - The previous edition of the SRA board (2019) used the LM7805 linear voltage regulator, for stepping dwon from 12V to 5V; this powered the ESP32.
+  - Further, this 5V was converted to 3.3V using the LD33 linear voltage regulator, used by the sensor port.
 
-- ### Motor Driver:
-    - Motors usually run on 12V and microcontroller output is generally 5V/3.3V. So one needs external motor driver circuitry to control motors according to the microcontroller input.
-    - In SRA board 2019 the motors were controlled using L298N motor driver which is a bjt based H Bridge motor driver.
+- ### Motor Driver
+    - Motors usually run on 12V and MCU output is generally 5V/3.3V. So, an external motor driver circuitry is required to control motors according to the MCU input.
+    - The SRA Board 2019 used the L298N IC for motor-control, which is a BJT-based H-Bridge motor driver.
 
-- ### Sensor port:
-    - According to the external sensor types usually, development boards have onboard sensor ports where the sensors can be connected easily using FRC port.
-    - SRA board 2019 contains two port for sensors. One port for LSA (line sensor array) and the second port is for MPU6050.
+- ### Sensor Port
+    - According to the external sensor types, usually development boards have onboard sensor ports where the sensors can be connected easily using FRC connector.
+    - The SRA Board 2019 had two sensor ports - one for a LSA (line sensor array) and the second for the MPU6050.
 
-- ### Protection against [reverse voltage](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjc8aaX1c3rAhXXXSsKHXphBgQQFjABegQICxAD&url=https%3A%2F%2Fwww.ti.com%2Flit%2Fpdf%2Fslva139&usg=AOvVaw0Qbub75JJ986MzLv6FYWKE) and overcurrent:
-    - In SRA board 2019 diodes are used in power line for reverse voltage protection.
-    - And for the overcurrent protection of microcontroller and motor driver circuit fuses of 300mA and 3Amp are used respectively.
+- ### Protection against [Reverse Voltage](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjc8aaX1c3rAhXXXSsKHXphBgQQFjABegQICxAD&url=https%3A%2F%2Fwww.ti.com%2Flit%2Fpdf%2Fslva139&usg=AOvVaw0Qbub75JJ986MzLv6FYWKE) and Over Current
+    - The SRA Board 2019 used diodes for reverse voltage protection in the power-line.
+    - For the overcurrent protection of MCU and motor driver circuit, fuses of 300mA and 3A were used respectively.
 
-- ### Programmable switches and LEDs:
-    - In general, every development board should have some programmable switches and LEDs for testing and control purpose.
-    - So SRA board 2019 consist of two programmable switches with two programmable LEDs.
+- ### Programmable Switches and LEDs
+    - Every development board should have some programmable switches and LEDs for testing, control and debugging purposes.
+    - The previous edition had a pair of programmable switches and programmable LEDs each.
 
-- ### Power on/off switch:
-    - SRA board 2019 has a power switch for the motor driver using which power supply to the motor driver can be turned on or off.
-    - Similarly, there is a microcontroller switch for ESP32 microcontroller using which microcontroller can be turned on or off.
-
-## Images of the board:
-- Images of SRA board 2020 are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/images/sra_board_images.md#images-of-sra-board-2020)
-
-> Now that we covered basic of the development board, let's talk about changes made in the new design. (for more detailed info of SRA board 2019 checkout this [pdf](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/documentation/assets/sra-board-2019.pdf)
-
-## Major changes made in the new design:
+- ### Power Switch
+    - The SRA Board 2019 had a power switch for the motor driver, using which power supply to the motor driver can be toggled. Similarly, there was a switch for the ESP32 MCU.
 
 
-| Topic  |  SRA board 2019  | SRA board 2020|
-|:----:|:-------:| :-----: | 
-| [12V to 5V](#78055v-linear-regulator-replaced-by-lm2596-buck-circuit)  | 7805 linear regulator | LM2596 buck |
-|[5V to 3.3V](#ld3333v-replaced-by-ams1117)| LD33 | AMS1117 |
-|[reverse voltage proteciton](#diodes-for-reverse-voltage-replaced-by-P-MOSFET) | Diodes | P-MOSFET |
+> Now that we covered basics of development boards, let us talk about the changes made in the new design. 
+
+## Major Changes for 2020
+
+| Feature  |  SRA Board 2019  | SRA Board 2020|
+|:----:|:-------:| :-----: |
+|[12V to 5V](#78055v-linear-regulator-to-lm2596-buck-convertor)  | LM7805 Linear Regulator | LM2596 Buck Convertor |
+|[5V to 3.3V](#ld3333v-to-ams1117)| LD33 | AMS1117 |
+|[Reverse Voltage Protection](#reverse-voltage-protection-diodes-to-pmosfet) | Diodes | P-MOSFET |
 |[Motor Driver](#l298n-replaced-by-tb6612fng)| L298N| TB6612FNG|
-|[No. of motor channels](#Modes-of-the-motor-driver)|2|4|
-|[No. of switches](#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)|2|4|
+|[No. of Motor Channels](#Modes-of-the-motor-driver)|2|4|
+|[No. of Switches](#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)|2|4|
 |[No. of LEDs](#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)|2|8|
 
-- ### **7805(5V linear regulator) replaced by [LM2596 buck circuit](https://www.youtube.com/watch?v=m8rK9gU30v4):**
-    - The reason for changing to buck circuit rather than using simple 7805 is the efficiency, output current and reliability of LM2596 is more than 7805.
-    - The efficiency of LM2596 is up to 92% which is way better than 7805. The LM2596 can provide current up to 3 Amp so from now on servos in MARIO workshop can be run using onboard regulator itself.
-- ### **LD33(3.3V) replaced by [AMS1117](http://www.advanced-monolithic.com/pdf/ds1117.pdf)**:
-    - Until last year we were using LD33 to convert 5V to 3.3V but after talking to our super senior we have decided to shift to more compact, reliable AMS1117(SOT-23) linear voltage regulator. (same voltage regulator i.e. AMS1117 is used on ESP32 devkit c V4 module)
+- ### **7805 (5V linear regulator) to [LM2596 Buck Convertor](https://www.youtube.com/watch?v=m8rK9gU30v4)**
+    - The greater efficiency, output current and reliability of LM2596 were the reasons for this change.
+    - The efficiency of LM2596 is up to 92% which is significantly better than 7805. The LM2596 can provide current up to 3A, so  the MARIO workshop manipulator can now be run using onboard regulator.
+- ### **LD33 (3.3V) to [AMS1117](http://www.advanced-monolithic.com/pdf/ds1117.pdf)**:
+    - The previous edition used the LD33 IC to setp down from 5V to 3.3V; several discussions resulted in the shift to more compact, reliable AMS1117(SOT-23) linear voltage regulator. (_AMS1117 is used in the ESP32-DevKitC V4 module_)
 
-- ### **Diodes for reverse voltage replaced by P-MOSFET**:
-    - Diodes in series of the power line are too inefficient as compare to P-MOSFET and as we are using high rated motors and all it was too hard to maintain diode size. As the current rating of diode increases, it's size also increases.
-    - So in this year board, we have used P-MOSFET instead of a diode. It is more efficient and it can handle more current than diodes used in the earlier design.
+- ### **Reverse voltage protection: Diodes to P-MOSFET**
+    - Diodes in series to the power line are inefficient as compare to a P-MOSFET. Dut to the usage of high-rated motors, it was difficult to manage the diode size and the current rating. (_As the current rating of diode increases, its size also increases._)
+    - So, the new edition uses the P-MOSFET instead of a diode, which is more efficient and can handle more current.
 
-- ### **L298N replaced by [TB6612FNG](https://dronebotworkshop.com/tb6612fng-h-bridge/)**:
-    - L298N is a bjt based H bridge motor driver but it is less efficient as compared to the new mos based TB6612FNG.
-    - Detailed comparison show below. As you can see the efficiency of TB6612FNG can reach up to 91-95% which is way higher than compared to the 40-70% efficiency of L298N.
-    - The only drawback of TB6612FNG is the less continuous current which is equal to 1.2 Amp. So for higher current capacity motors, two TB6612FNG are given on the board. so they can be used in parallel mode to double the current capacity to 2.4 Amp.
+- ### **L298N to [TB6612FNG](https://dronebotworkshop.com/tb6612fng-h-bridge/)**
+    - L298N is a BJT-based H-bridge motor driver but it is less efficient as compared to the new MOS-based TB6612FNG.
+    - The detailed comparison is shown below. As you can see the efficiency of TB6612FNG can reach up to 91-95% which is significantly higher than the 40-70% efficiency of L298N.
+    - The only drawback of TB6612FNG is the less continuous current which is equal to 1.2A. So, for higher current capacity motors, two TB6612FNG are given on the board, which be used in parallel mode to double the current capacity to 2.4A.
     
     <p align="center">
         <img width="460" height="300" src="https://i1.wp.com/dronebotworkshop.com/wp-content/uploads/2019/12/TB6612-vs-L298N.jpeg?w=768&ssl=1">
     </p>
 
-- ### **Modes of the motor driver**:
-    - In previous year SRA board one L298N was used using which can only control two motors as l298n as two motor channels but in this year 2x TB6612FNG  motor driver is used so maximum 4 motors can be controlled using ESP32.
-    - The motor driver can be worked in two modes **Normal mode** and **parallel mode**:   
-        1. **Normal Mode**:<br />
+- ### **Motor Driver Modes**
+    - The new edition has 2x TB6612FNG motor drivers which allow a maximum of 4 motors to be controlled. This motor driver is characterized by its operation in two modes - **Normal mode** and **Parallel mode**:   
+        1. **Normal Mode**
+        <br />
         <p align="center">
-            <img width="460" height="300" src="/documentation/assets/normal_mode.jpeg">
+        <img width="460" height="300" src="/documentation/assets/normal_mode.jpeg">
         </p>
 
-        -  As discussed earlier in the new design there are two motor drivers. Each TB6612FNG can control two motors. Therefore, using two motor driver one can control 4 motors using 8 GPIO's of ESP32.
-        - For example: if 32 pin is HIGH(IN1 = HIHG) and pin 33 is low(IN2 = LOW) then motor 1 moves in the forward direction. 
-        - So in normal mode, 4 motors can be connected to the board and one thing to be noted is per channel/motor the current capacity is 1.2 Amp.<br /><br />
-        2. **Parallel Mode**:<br />
-         <p align="center">
-            <img width="460" height="300" src="/documentation/assets/parallel_mode.jpeg">
+        -  As discussed earlier, the new design has two motor drivers. Each TB6612FNG can control two motors. Therefore, using two motor driver one can control 4 motors using 8 GPIO's of ESP32.
+        - E.g.: If pin 32 is HIGH(IN1 = HIHG) and pin 33 is low(IN2 = LOW) then motor 1 moves in the forward direction. 
+        - So in normal mode, 4 motors can be connected to the board, with a per channel/motor current capacity of 1.2A.
+        <br/><br/>
+
+        1. **Parallel Mode**
+        <br />
+        <p align="center">
+        <img width="460" height="300" src="/documentation/assets/parallel_mode.jpeg">
         </p>
 
-        -  Parallel mode is a special feature, it is used for high rated motors. if suppose your motor needs more than 1.2 amp current then for that motor parallel mode should be used.
-        -  In parallel mode, the channel's directional pins and output pins are shorted. so only one motor is connected to one motor driver i.e. using two channels you can control one motor because of which current capacity is doubled to 2.4 amp.
-        -  So in parallel mode, two high rated motors can be controlled using ESP32.
-        -  One thing should be noted here that directional pin shorting is done by manual DPDT switch. If the user turns on 'TB_A' switch then first motor driver goes into the parallel mode and its directional pins are shorted. IN1 = IN3 = 25 and IN2 = IN4 = 26.If TB_A switch is off first motor driver goes into normal mode where GPIO connections are IN1 = 32: IN2 = 33: IN3 = 25: IN4 = 26. This is all done automatically.
-        - In parallel mode, the J1, J2, J3 and J4 junctions need to be shorted. They short the output of the motor driver.
-        
-- ### **Moving back to vintage Bar Graph LED and more no. of switches**:<br /><br />
-    - In the previous year, we were using 2 programmable switches and 2 programmable LEDs but in this year's design, we have provided bar graph led which contains 10 LEDs out of which two are reserved for 5V and 3.3V voltage indication purpose.
-    -  So there are 8 programmable LEDs on the board. These LEDs multiplexed with directional pins of two motor driver to save pins.
-    -  What are directional pins? >> Every motor driver channel has two directional pins IN1, IN2. If IN1 is high and IN2 is low then motors move in a clockwise direction and there are 4 channels on the board so 4*2 = 8 directional pins are multiplexed with 8 programmable LEDs)
-    -  With 8 LEDs in hand, the programmer can do crazy tricks for debugging. Some examples are as follows:
-        1. According to the LSA data, we can program 4 LEDs to turn on when the line sensor detects white colour and turn off for black colour with this feature debugging will be easy.
-        2. If the motor is moving in a forward direction according to that dedicated LEDs will be turned on indicating IN1 is high and IN2 is low because of this motion of the bot can be debugged.
+        -  The parallel mode is a special feature, used for high-rated motors, requiring more than the 1.2A current limit.
+        -  In this mode, the channel's directional pins and output pins are shorted; only one motor is connected to a motor driver i.e. two channels, giving a current capacity of 2.4A. Thus, two high rated motors can be controlled using ESP32.
+        -  Note: The directional pin shorting is done by a manual DPDT switch. If the user turns on TB_A switch then the first motor driver goes into the parallel mode and its directional pins are shorted, where GPIO connections are IN1 = IN3 = 25 and IN2 = IN4 = 26. If TB_A switch is off, then the first motor driver goes into normal mode where IN1 = 32: IN2 = 33: IN3 = 25: IN4 = 26. This is all done automatically. Also for parallel mode, the J1, J2, J3 and J4 junctions need to be shorted.
+        <br/><br/>
+
+- ### **Moving back to the vintage Bar-graph LEDa and more switches**
+    - The previous edition used a pair of programmable switches and LEDs each but in this year, the provision for a bar graph LED has been made. It has 10 LEDs out of which two are reserved for 5V and 3.3V voltage indication.
+    -  So there are 8 programmable LEDs on the board. These LEDs multiplexed with directional pins of the two motor drivers to save pins.
+    -  Directional pins? >> Every motor driver channel has two directional pins IN1, IN2. If IN1 is high and IN2 is low then motors move in a clockwise direction and there are 4 channels on the board, so 4 * 2 = 8 directional pins are multiplexed with 8 programmable LEDs.
+    -  With 8 LEDs in hand, debugging get easier. Some examples - 
+        1. According to the line sensor array (LSA) data, one can program 4 LEDs to turn on when the line sensor detects white  and turn off for black- line following debugging.
+        2. If a motor is moving in a forward direction, the dedicated LEDs will be indicating IN1 is high and IN2 is low - motor control debugging.
 
 
-## Problems and their solutions:
+## Notable problems in the SRA Board 2019
 
-- ### **The simultaneous power supply issue**:
-    - ESP32 can be power using two ways. The first way is via the USB port given on the ESP32 and second way is powering ESP32 via providing a voltage on VIN pin.
-    - In previous year SRA board if simultaneous power was given to the ESP32 then it won't work as there was no circuitry for such condition and it is also mentioned on ESP32 site.
+- ### **The Simultaneous Power Supply Issue**
+    - ESP32 can be power using two ways - one via the USB port given on the ESP32 and two via providing a voltage on VIN pin.
+    - In the SRA Board 2019, if simultaneous power (on both the above sources) was provided to the ESP32 then it won't work as there was no circuitry for handling such a condition.
+    - The following disclaimer from the official ESP32 documentation made it essential to design some external circuit to handle this condition and accordingly pass only one signal to the ESP32 board.
     > *The power supply must be provided using one and only one of the options above, otherwise, the board and/or the power supply source can be damaged.*
-    - So if we want both simultaneous power to work then we need some external circuit to handle this condition and accordingly pass only one signal to the ESP32 board.
-    - #### Solution:
-        - The solution for this issue was [diode auctioneering](http://doerry.org/norbert/papers/20190606-doerry-ashton-auctioneering-diodes.pdf)
+    - #### Solution
+        - The solution for this issue was [Diode Auctioneering](http://doerry.org/norbert/papers/20190606-doerry-ashton-auctioneering-diodes.pdf).
 
         <p align="center">
             <img width="460" height="300" src="/documentation/assets/diode_vin.png">
         </p>
 
-        - There is inbuilt BAT760 diode on the USB line on ESP32.
-        - In short, if different voltages are applied at Vusb and Vin then the voltage with bigger magnitude will be given to LD1117 (LDO on ESP32), most of the time the voltage will be the same on Vin and Vusb i.e 5V.
-        - But as we planned to use 1N5417 diode on Vin path which has more **Vf** (forward voltage) than bat760 so here voltage indifference will be created and in simultaneous power supply condition USB will be selected as its voltage will be more than Vin.
+        - There is an inbuilt BAT760 diode on the USB line on ESP32. If different voltages are applied at Vusb and Vin, then the voltage with bigger magnitude will be given to LD1117 (LDO on ESP32); often the voltage will be the same on Vin and Vusb i.e 5V.
+        - But, the usage of the 1N5417 diode on the Vin path, which has more **Vf** (forward voltage) than the BAT760, will create a voltage indifference and in a simultaneous power supply condition, USB will be selected as its voltage will be more than Vin.
 
-## 3D model:
+## 3D Models
 
-- 3D preview of *[SRA BOARD](https://a360.co/3c1Rjyv)*.
+- 3D preview of the *[SRA Board 2020](https://a360.co/3c1Rjyv)*
 
-    1. The complete 3D model file of  [SRA_BOARD](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3D%20models/sra_board_model)
-    2. 3D models of motor driver, LEDs, ESP32 etc. all are here:  [ 3d models of other components](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3D%20models/Other_components_model)
+    1. The complete 3D model (.stl) file of [SRA Board 2020](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3D%20models/sra_board_model)
+    2. The 3D models of motor driver, LEDs, ESP32 etc.: [3d models of other components](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3D%20models/Other_components_model)
 
 <!-- Milestone -->
-## Milestone:
-- [x] Designing of the prototype board.
-- [x] Modular testing of the circuit.
-- [ ] Testing of prototype board.
-- [ ] Final version.
-
+## Milestones
+- [x] Designing of the prototype board
+- [x] Modular testing of the circuit
+- [ ] Testing of prototype board
+- [ ] Final version
 
 <!-- CONTRIBUTORS -->
-## Contributors:
+## Contributors
 
 - [Omkar Bhilare](https://github.com/ombhilare999): *Designer*
 - [Dhiraj Patil](https://github.com/dhirajp15): *Mentor*
 - [Saurabh Gupta](https://github.com/saurabh1002): *Mentor*
 - [Udit Patadia](https://github.com/udit7395): *Mentor*
-- [Laukik hase](https://github.com/laukik-hase): *Mentor*
+- [Laukik Hase](https://github.com/laukik-hase): *Mentor*
 
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
 ## Acknowledgements and Resources
--   Thanks to [OSH](https://oshpark.com/) for providing us 100 dollars free coupon code for prototype boards.
--   Previous year design: [SRA board 2019](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd)
+-   Thanks to [OSH](https://oshpark.com/) for providing us with free coupons worth $100 for printing the prototype boards.
+-   Previous Edition: [SRA Board 2019](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd)
 -   [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
-## License:
-- Distributed under the  [MIT License](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/LICENSE).
+## License
+- Distributed under the [MIT License](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/LICENSE).
 
 
 
