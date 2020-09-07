@@ -14,7 +14,7 @@
     ·
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/gerber_files/camoutputs">Gerber</a>
     ·
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/documentation">Resources</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/documentation/images/sra_board_images.md#sra-board-2020-images">Images</a>
     ·
     <a href="https://a360.co/3c1Rjyv">3D Model</a>
   </p>
