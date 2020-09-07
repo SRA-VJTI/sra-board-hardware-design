@@ -44,7 +44,7 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
 - This development board is used for the [Wall-E](https://github.com/SRA-VJTI/Wall-E_v2.1) and [MARIO](https://github.com/SRA-VJTI/ROS-Workshop-2.1) workshops conducted by [SRA](https://github.com/SRA-VJTI).
 - Designed using EAGLE. The schematic and board files are [here](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle). 
 - Resources for [previous work](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd).  For more details of the SRA board 2019, checkout this [link](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/documentation/assets/sra-board-2019.pdf).
-- The SRA board 2020 images can be found [here](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/documentation/images/).
+- The SRA board 2020 images can be found [here](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/documentation/images/sra_board_images.md#sra-board-2020-images).
 
 ## Getting Started with a Development Board
 
@@ -86,13 +86,13 @@ In general, every development board has the following basic features:
 
 | Feature  |  SRA Board 2019  | SRA Board 2020|
 |:----:|:-------:| :-----: |
-|[12V to 5V](#78055v-linear-regulator-to-lm2596-buck-convertor)  | LM7805 Linear Regulator | LM2596 Buck Convertor |
-|[5V to 3.3V](#ld3333v-to-ams1117)| LD33 | AMS1117 |
-|[Reverse Voltage Protection](#reverse-voltage-protection-diodes-to-pmosfet) | Diodes | P-MOSFET |
-|[Motor Driver](#l298n-replaced-by-tb6612fng)| L298N| TB6612FNG|
-|[No. of Motor Channels](#Modes-of-the-motor-driver)|2|4|
-|[No. of Switches](#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)|2|4|
-|[No. of LEDs](#moving-back-to-vintage-bar-graph-led-and-more-no-of-switches)|2|8|
+|[12V to 5V](#7805-5v-linear-regulator-to-lm2596-buck-convertor)  | LM7805 Linear Regulator | LM2596 Buck Convertor |
+|[5V to 3.3V](#ld33-33v-to-ams1117)| LD33 | AMS1117 |
+|[Reverse Voltage Protection](#reverse-voltage-protection-diodes-to-p-mosfet) | Diodes | P-MOSFET |
+|[Motor Driver](#l298n-to-tb6612fng)| L298N| TB6612FNG|
+|[No. of Motor Channels](#motor-driver-modes)|2|4|
+|[No. of Switches](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches)|2|4|
+|[No. of LEDs](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches)|2|8|
 
 - ### **7805 (5V linear regulator) to [LM2596 Buck Convertor](https://www.youtube.com/watch?v=m8rK9gU30v4)**
     - The greater efficiency, output current and reliability of LM2596 were the reasons for this change.
@@ -137,7 +137,7 @@ In general, every development board has the following basic features:
         -  Note: The directional pin shorting is done by a manual DPDT switch. If the user turns on TB_A switch then the first motor driver goes into the parallel mode and its directional pins are shorted, where GPIO connections are IN1 = IN3 = 25 and IN2 = IN4 = 26. If TB_A switch is off, then the first motor driver goes into normal mode where IN1 = 32: IN2 = 33: IN3 = 25: IN4 = 26. This is all done automatically. Also for parallel mode, the J1, J2, J3 and J4 junctions need to be shorted.
         <br/><br/>
 
-- ### **Moving back to the vintage Bar-graph LEDa and more switches**
+- ### **Moving back to the vintage Bar-graph LEDs and more switches**
     - The previous edition used a pair of programmable switches and LEDs each but in this year, the provision for a bar graph LED has been made. It has 10 LEDs out of which two are reserved for 5V and 3.3V voltage indication.
     -  So there are 8 programmable LEDs on the board. These LEDs multiplexed with directional pins of the two motor drivers to save pins.
     -  Directional pins? >> Every motor driver channel has two directional pins IN1, IN2. If IN1 is high and IN2 is low then motors move in a clockwise direction and there are 4 channels on the board, so 4 * 2 = 8 directional pins are multiplexed with 8 programmable LEDs.
@@ -167,8 +167,8 @@ In general, every development board has the following basic features:
 
 - 3D preview of the *[SRA Board 2020](https://a360.co/3c1Rjyv)*
 
-    1. The complete 3D model (.stl) file of [SRA Board 2020](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3D%20models/sra_board_model)
-    2. The 3D models of motor driver, LEDs, ESP32 etc.: [3d models of other components](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3D%20models/Other_components_model)
+    1. The complete 3D model (.stl) file of [SRA Board 2020](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3d_models/sra_board_model)
+    2. The 3D models of motor driver, LEDs, ESP32 etc.: [3d models of other components](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3d_models/other_components_model)
 
 <!-- Milestone -->
 ## Milestones
