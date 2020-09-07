@@ -14,7 +14,7 @@
     ·
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/gerber_files/camoutputs">Gerber</a>
     ·
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/**documentation**">Resources</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/documentation">Resources</a>
     ·
     <a href="https://a360.co/3c1Rjyv">3D Model</a>
   </p>
@@ -190,6 +190,7 @@ In general, every development board has the following basic features:
 ## Acknowledgements and Resources
 -   Thanks to [OSH](https://oshpark.com/) for providing us with free coupons worth $100 for printing the prototype boards.
 -   Previous Edition: [SRA Board 2019](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd)
+-   [Eagle Tutorials](https://www.youtube.com/playlist?list=PL868B73617C6F6FAD) 
 -   [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
 ## License
