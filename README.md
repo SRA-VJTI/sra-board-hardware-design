@@ -1,4 +1,9 @@
 <!-- PROJECT LOGO -->
+[![Stargazers][stars-shield]][stars-url]
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]
+[![License][license-shield]][license-url]
+
 <br />
 
 <p align="center">
@@ -197,5 +202,16 @@ In general, every development board has the following basic features:
 - Distributed under the [MIT License](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/LICENSE).
 
 
+[forks-shield]:https://img.shields.io/github/forks/SRA-VJTI/sra-board-hardware-design
+[forks-url]: https://github.com/SRA-VJTI/sra-board-hardware-design/network/members
+
+[stars-shield]: https://img.shields.io/github/stars/SRA-VJTI/sra-board-hardware-design
+[stars-url]: https://github.com/SRA-VJTI/sra-board-hardware-design/stargazers
+
+[issues-shield]: https://img.shields.io/github/issues/SRA-VJTI/sra-board-hardware-design
+[issues-url]: https://github.com/SRA-VJTI/sra-board-hardware-design/issues
+
+[license-shield]: https://img.shields.io/github/license/SRA-VJTI/sra-board-hardware-design
+[license-url]: https://github.com/SRA-VJTI/sra-board-hardware-design/blob/master/LICENSE
 
 
