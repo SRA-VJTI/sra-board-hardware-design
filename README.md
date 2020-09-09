@@ -13,7 +13,7 @@
 
   <h3 align="center">SRA Development Board</h3>
   <p align="center">
-    ESP32-based SRA Development Board
+    ESP32-based Development Board
     <br />
     <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle">EAGLE</a>
     ·
