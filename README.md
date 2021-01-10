@@ -4,6 +4,7 @@
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
 
+
 <br />
 
 <p align="center">
@@ -23,7 +24,11 @@
     ·
     <a href="https://a360.co/3c1Rjyv">3D Model</a>
   </p>
+
+<p align="center">
+<a href="https://oshpark.com/shared_projects/erADDDjN"><img src="https://oshpark.com/packs/media/images/badge-5f4e3bf4bf68f72ff88bd92e0089e9cf.png" alt="Order from OSH Park"></img></a>
 </p>
+
 
 # SRA Board 2020
 
