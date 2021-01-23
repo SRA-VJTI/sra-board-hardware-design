@@ -184,7 +184,7 @@ In general, every development board has the following basic features:
 ## Milestones
 - [x] Designing of the prototype board
 - [x] Modular testing of the circuit
-- [ ] Testing of prototype board
+- [x] Testing of prototype board
 - [ ] Final version
 
 <!-- CONTRIBUTORS -->
