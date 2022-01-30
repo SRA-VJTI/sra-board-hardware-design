@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "sra_board_2020-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/sra_board_2020-eagle-import.kicad_sym")(options "")(descr ""))
-)
