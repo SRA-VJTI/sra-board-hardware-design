@@ -1,4 +1,4 @@
-19535674631406115
+19545536426574397
 1N581_
 1N581_DO41-7.6_tht
 <b>DO41</b> 7.6mm x 2mm<p>{return}Source: http://www.diodes.com/datasheets/ds23001.pdf
@@ -83258,12 +83258,54 @@ Inductor
 2
 2
 inductor
+CDRH127_inductor_smd
+
+
+0
+2
+2
+inductor
 SD12K100_tht_inductor
 NOMINAL <b>INDUCTANCE</b><p>{return}over 82 µH, grid 5 mm, diameter 10.5 mm, height 13 mm
 
 0
 2
 2
+logos
+sra_logo_big
+
+
+0
+0
+0
+logos
+sra_logo_small
+
+
+0
+0
+0
+logos
+sra_skull_big
+
+
+0
+0
+0
+logos
+sra_skull_medium
+
+
+0
+0
+0
+logos
+sra_skull_small
+
+
+0
+0
+0
 motor_driver
 TB6612FNG
 

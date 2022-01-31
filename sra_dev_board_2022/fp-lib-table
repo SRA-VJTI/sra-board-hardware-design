@@ -14,4 +14,7 @@
   (lib (name "1N581_")(type "KiCad")(uri "${KIPRJMOD}/component_libraries/diode/1N581_")(options "")(descr ""))
   (lib (name "1N5399")(type "KiCad")(uri "${KIPRJMOD}/component_libraries/diode/1N5399")(options "")(descr ""))
   (lib (name "SS34")(type "KiCad")(uri "${KIPRJMOD}/component_libraries/diode/SS34")(options "")(descr ""))
+  (lib (name "logos")(type "KiCad")(uri "${KIPRJMOD}/component_libraries/logos")(options "")(descr ""))
+  (lib (name "RXEF050_1A_trip")(type "KiCad")(uri "${KIPRJMOD}/component_libraries/ptc_fuse/RXEF050_1A_trip")(options "")(descr ""))
+  (lib (name "RUEF150_3,2A_trip")(type "KiCad")(uri "${KIPRJMOD}/component_libraries/ptc_fuse/RUEF150_3,2A_trip")(options "")(descr ""))
 )
