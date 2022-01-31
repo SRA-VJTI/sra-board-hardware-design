@@ -1,4 +1,4 @@
-# SRA Board 20202: Images
+# SRA Board 2022: Images
 
 1. Schematic image: 
 ![Schematic](board_images/schematic.png)
