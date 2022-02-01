@@ -5,17 +5,17 @@
       "Application": "Pcbnew",
       "Version": "6.0.1-79c1e3a40b~116~ubuntu20.04.1"
     },
-    "CreationDate": "2022-02-02T01:42:17+05:30"
+    "CreationDate": "2022-02-02T02:26:07+05:30"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "sra_dev_board_2022",
-      "GUID": "7372615f-6465-4765-9f62-6f6172645f32",
+      "Name": "mpu",
+      "GUID": "6d70752e-6b69-4636-9164-5f7063625858",
       "Revision": "rev?"
     },
     "Size": {
-      "X": 81.3148,
-      "Y": 92.7822
+      "X": 22.1,
+      "Y": 13.1
     },
     "LayerNumber": 2,
     "BoardThickness": 1.6,
@@ -24,57 +24,57 @@
   "DesignRules": [
     {
       "Layers": "Outer",
-      "PadToPad": 0.0,
-      "PadToTrack": 0.0,
+      "PadToPad": 0.2,
+      "PadToTrack": 0.2,
       "TrackToTrack": 0.2,
-      "MinLineWidth": 0.2,
-      "TrackToRegion": 0.508,
-      "RegionToRegion": 0.508
+      "MinLineWidth": 0.3,
+      "TrackToRegion": 0.254,
+      "RegionToRegion": 0.254
     }
   ],
   "FilesAttributes": [
     {
-      "Path": "sra_dev_board_2022-F_Cu.gbr",
+      "Path": "mpu-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-B_Cu.gbr",
+      "Path": "mpu-B_Cu.gbr",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-F_Paste.gbr",
+      "Path": "mpu-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-B_Paste.gbr",
+      "Path": "mpu-B_Paste.gbr",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-F_Silkscreen.gbr",
+      "Path": "mpu-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-B_Silkscreen.gbr",
+      "Path": "mpu-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-F_Mask.gbr",
+      "Path": "mpu-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "sra_dev_board_2022-B_Mask.gbr",
+      "Path": "mpu-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "sra_dev_board_2022-Edge_Cuts.gbr",
+      "Path": "mpu-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }

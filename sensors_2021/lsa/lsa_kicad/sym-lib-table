@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "lsar-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/lsar-eagle-import.kicad_sym")(options "")(descr ""))
-)
