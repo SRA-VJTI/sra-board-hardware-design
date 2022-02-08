@@ -53,17 +53,13 @@
     <img width="600" height="606" src="board_images/front_side2.png">
     </p>
 
-12. Front_side3:
-    <p align="center">
-    <img width="600" height="606" src="board_images/front_side3.png">
-    </p>
 
-13. Front_side4:
-    <p align="center">
-    <img width="600" height="606" src="board_images/front_side_4.png">
-    </p>
-
-14. 3d View:
+12. 3d View:
     <p align="center">
     <img width="600" height="606" src="board_images/side.png">
+    </p>
+
+12. Bottom View:
+    <p align="center">
+    <img width="600" height="606" src="board_images/bottom.png">
     </p>
