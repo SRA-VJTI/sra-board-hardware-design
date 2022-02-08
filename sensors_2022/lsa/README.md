@@ -13,7 +13,7 @@
 * [Working Principle](#working-principle)
 * [Appplications](#applications)
 * [Scope of Improvement](#scope-of-improvement)
-* [Description of Functions Used](#description-of-functions-used)
+
 
 ### Overview 
 - The Light Sensor Array(LSA) is used to detect the white/black lined surface and it sends this data to the microcontroller ESP-32. Analyzing and processing the data received by the microcontroller ESP-32, the purpose of line following is achieved.
@@ -73,49 +73,3 @@ To connect LSA with the SRA Board, connect the JST connector in the following wa
 - LSA sometimes provides slightly inaccurate readings due to external light and conditions due to non uniformity of the colour of the path. Therefore, LSA has low accuracy. Hence LSA should be kept close to the ground.
 - As of now only white and black surfaces are being mapped. Given accurate sensors and proper mapping we can map LSA for any range of RGB colours.
 
-### Description of Functions Used
-* ```c
-    esp_err_t enable_line_sensor(int mode)	
-    ```
-    **Description** : Enables and Configures the adc(Analog to Digital Converter).	.
-
-    **Parameters** :
-    * `None` 
-
-    **Returns** : esp_err_t returns ESP_OK if adc is initialised properly, else it returns ESP_ERR_INVALID_ARG
-    
-* ```c
-    float bound(float val, float min, float max)	
-    ```
-    **Description** : Bounds the given val within the range [min, max].
-
-    **Parameters** :
-    * `val` : the value which needs to be bounded in the range [min, max].
-    * `min` : the minimium limit value of the bounding range.
-    * `max` : the maximum limit value of the bounding range.
-
-    **Returns** : the bounded value of val within the bounding range.
-    
-* ```c
-    float map(float val, float input_lower_limit, float input_higher_limit, float output_lower_limit, float output_higher_limit)	
-    ```
-    **Description** : Maps the range [input_lower_limit, input_higher_limit] to  the range [output_lower_limit, output_higher_limit].
-
-    **Parameters** :
-    * `val` : the value which needs to be mapped.
-    * `input_lower_limit` : the minimium limit value of the input mapping range.
-    * `input_lower_limit` : the maximum limit value of the input mapping range.
-    * `output_lower_limit` : the minimium limit value of the output mapping range.
-    * `output_lower_limit` : the maximum limit value of the output mapping range.
-    
-    **Returns** : the mapped value of val lying within the output mapping range.
-    
-* ```c 
-    void vTaskDelay(const TickType_t xTicksToDelay)
-  ```
-
-  **Description** : Delay a task for a given number of ticks.The constant portTICK_PERIOD_MS can be used to calculate real time from the tick rate - with the     resolution of one tick period.
-
-  **Parameters** : 
-  * `xTicksToDelay` : The amount of time, in tick periods, that the calling task should block.
-    
