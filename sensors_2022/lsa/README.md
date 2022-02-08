@@ -19,10 +19,12 @@
 - The Light Sensor Array(LSA) is used to detect the white/black lined surface and it sends this data to the microcontroller ESP-32. Analyzing and processing the data received by the microcontroller ESP-32, the purpose of line following is achieved.
 
 - Physical PCB
-<img src="assets/lsafront.PNG">
 
-- PCB Model
-<img src="assets/lsaside.PNG">
+   <img src="assets/lsafront.PNG" width="450" height = "250">
+
+- PCB Backside
+
+   <img src="assets/lsaback.PNG" width="450" height = "250">
 
 ### Features
 * Components used are readily available.
@@ -55,7 +57,7 @@
 
 ### Connections
 To connect LSA with the SRA Board, connect the JST connector in the following way:
-<img src="assets/lsaconn.png"> 
+<img src="assets/lsaconn.png" width="400" height = "550"> 
 
 ### Working Principle
 - LSA works on the principle of reflectivity of light for different types of surfaces.
