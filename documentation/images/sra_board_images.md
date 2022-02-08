@@ -38,3 +38,32 @@
     <img width="436" height="556" src="board_images/bottom_layer_polygon.png">
     </p>
 
+9. Front:
+    <p align="center">
+    <img width="600" height="630" src="board_images/front.png">
+    </p>
+
+10. Front_side1:
+    <p align="center">
+    <img width="600" height="630" src="board_images/front_side1.png">
+    </p>
+
+11. Front_side2:
+    <p align="center">
+    <img width="600" height="606" src="board_images/front_side2.png">
+    </p>
+
+12. Front_side3:
+    <p align="center">
+    <img width="600" height="606" src="board_images/front_side3.png">
+    </p>
+
+13. Front_side4:
+    <p align="center">
+    <img width="600" height="606" src="board_images/front_side_4.png">
+    </p>
+
+14. 3d View:
+    <p align="center">
+    <img width="600" height="606" src="board_images/side.png">
+    </p>
