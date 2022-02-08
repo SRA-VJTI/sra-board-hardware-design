@@ -1,6 +1,7 @@
 # TABLE OF CONTENTS
 - [TABLE OF CONTENTS](#table-of-contents)
 - [MPU6050](#mpu6050)
+- [Connection with SRA Board](#connection-with-sra-board)
 - [Inertial Measurement Unit](#inertial-measurement-unit)
 - [Initialising MPU6050](#initialising-mpu6050)
   - [Gyroscope](#gyroscope)
@@ -11,6 +12,11 @@
   - [Complementary Filter](#complementary-filter)
   - [Digital Motion Processor](#digital-motion-processor-dmp)
   - [Reading Register Data](#reading-register-data)
+
+# Connection with SRA Board
+<img width="599" alt="PNG image" src="https://user-images.githubusercontent.com/72294682/152956585-ac4468b6-e78d-474f-aab1-e3f682476b97.png">
+
+
 # MPU6050
 - The MPU6050 is a **6-axis/6-DOF Motion Tracking Device**.
 - It is a *Micro Electro-Mechanical System (MEMS)*.
