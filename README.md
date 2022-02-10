@@ -170,7 +170,7 @@ In general, every development board has the following basic features:
 
 | Previous FRC Connectors  |  Current JST-PH Connectors  | 
 |:----:|:-------:| 
-|<img width="150" height="150" src="/documentation/assets/frc.jpeg"> | <img width="150" height="150" src="/documentation/assets/jstPh_Connectors.png)">|
+|<img width="150" height="150" src="/documentation/assets/frc.jpeg"> | ![jstPh_Connectors](https://user-images.githubusercontent.com/84874044/153403543-0e08c307-8752-45e2-b3d6-c5373742ea91.png)|
 
 - ### **Fuses**
     - Bulky glass fuses in the earlier editions of the board were replaced by PTC or Positive Temperature Coefficient resettable fuses, enabling autorecovery from a temporary overload without any user intervention.
