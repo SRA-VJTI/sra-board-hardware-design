@@ -16,7 +16,7 @@
   <p align="center">
     ESP32-based Development Board
     <br />
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle">EAGLE</a>
+    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle">KICAD</a>
     ·
     <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/gerber_files">Gerber</a>
     ·
@@ -41,7 +41,7 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
   - [Table of Contents](#table-of-contents)
   - [About the Project](#about-the-project)
   - [Getting Started with a Development Board](#getting-started-with-a-development-board)
-  - [Major Changes since 2019](#major-changes-since-2019)
+  - [Major Changes in 2022](#major-changes-in-2022)
   - [Notable problems in the SRA Board 2019](#notable-problems-in-the-sra-board-2019)
   - [3D Models](#3d-models)
   - [3D Models of 2020 Board](#3d-models-of-2020-board)
@@ -69,7 +69,7 @@ In general, every development board has the following basic features:
   - Microcontrollers (MCUs) usually run on 3.3V or 5V while input to a development board is normally 12V for motor control.
   - So, a *power* section which converts this 12V to standard levels like 5V/3.3V for MCU and sensors is present.
   - The previous edition of the SRA board (2019) used the LM7805 linear voltage regulator, for stepping down from 12V to 5V; this powered the ESP32.
-  - Further, this 5V was converted to 3.3V using the LD33 linear voltage regulator, used by the sensor port.
+  - Further, this 5V was converted to 3.3V using the AMS1117 linear voltage regulator, used by the sensor port.
 
 - ### Motor Driver
     - Motors usually run on 12V and MCU output is generally 5V/3.3V. So, an external motor driver circuitry is required to control motors according to the MCU input.
@@ -82,6 +82,7 @@ In general, every development board has the following basic features:
 - ### Protection against [Reverse Voltage](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjc8aaX1c3rAhXXXSsKHXphBgQQFjABegQICxAD&url=https%3A%2F%2Fwww.ti.com%2Flit%2Fpdf%2Fslva139&usg=AOvVaw0Qbub75JJ986MzLv6FYWKE) and Over Current
     - The SRA Board 2019 used diodes for reverse voltage protection in the power-line.
     - For the overcurrent protection of MCU and motor driver circuit, fuses of 300mA and 3A were used respectively.
+    - The SRA Board 2022 uses PTC Resettable fuses for overcurrent protection.
 
 - ### Programmable Switches and LEDs
     - Every development board should have some programmable switches and LEDs for testing, control and debugging purposes.
@@ -94,14 +95,14 @@ In general, every development board has the following basic features:
 > Now that we covered basics of development boards, let us talk about the changes made in the new design. 
 
 
-## Major Changes since 2019
+## Major Changes in 2022
 
 | Feature  |  SRA Board 2019  | SRA Board 2020| SRA Board 2022 |
 |:----:|:-------:| :-----: | :-----: |
 |[12V to 5V](#7805-5v-linear-regulator-to-lm2596-buck-convertor)  | LM7805 Linear Regulator | LM2596 Buck Convertor | LM2596 Buck Converter in SMD Package |
 |[5V to 3.3V](#ld33-33v-to-ams1117)| LD33 | AMS1117 | AMS1117 |
 |[Reverse Voltage Protection](#reverse-voltage-protection) | Diodes | P-MOSFET | SS34 SMD Diodes
-|[Motor Driver](#l298n-to-tb6612fng)| L298N| TB6612FNG|TB6612FNG|
+|[Motor Driver](#l298n-to-tb6612fng)| L298N| TB6612FNG|TB6612576|
 |[No. of Motor Channels](#motor-driver-modes)|2|4|4|
 |[No. of Switches](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches)|2|4|4|
 |[No. of LEDs](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches)|2|8 (LED Array)|8 (SMD LED-Resistor Pair) |
@@ -153,7 +154,7 @@ In general, every development board has the following basic features:
         -  Note: The directional pin shorting is done by a manual DPDT switch. If the user turns on TB_A switch then the first motor driver goes into the parallel mode and its directional pins are shorted, where GPIO connections are IN1 = IN3 = 25 and IN2 = IN4 = 26. If TB_A switch is off, then the first motor driver goes into normal mode where IN1 = 32: IN2 = 33: IN3 = 25: IN4 = 26. This is all done automatically. Also for parallel mode, the J1, J2, J3 and J4 junctions need to be shorted.
         <br/><br/>
 
-- ### **Moving back to the vintage Bar-graph LEDs and more switches**
+- ### **Moving back to the vintage Bar-graph LED's and more switches**
     - The previous edition used a pair of programmable switches and LEDs each but in 2020, the provision for a bar graph LED has been made. It has 10 LEDs out of which two are reserved for 5V and 3.3V voltage indication.
     -  So there are 8 programmable LEDs on the board. These LEDs multiplexed with directional pins of the two motor drivers to save pins.
     -  Directional pins? >> Every motor driver channel has two directional pins IN1, IN2. If IN1 is high and IN2 is low then motors move in a clockwise direction and there are 4 channels on the board, so 4 * 2 = 8 directional pins are multiplexed with 8 programmable LEDs.
@@ -223,17 +224,15 @@ In general, every development board has the following basic features:
 <!-- CONTRIBUTORS -->
 ## Contributors
 
-- [Omkar Bhilare](https://github.com/ombhilare999): *Designer*
-- [Dhiraj Patil](https://github.com/dhirajp15): *Mentor*
-- [Saurabh Gupta](https://github.com/saurabh1002): *Mentor*
-- [Udit Patadia](https://github.com/udit7395): *Mentor*
-- [Laukik Hase](https://github.com/laukik-hase): *Mentor*
+- [Dhairya Shah](https://github.com/dhairyashah1): *Designer*
+- [Omkar Bhilare](https://github.com/ombhilare999): *Mentor*
+- [Vedant Paranjpe](https://github.com/VedantParanjape): *Mentor*
 
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
 ## Acknowledgements and Resources
 -   Thanks to [OSH](https://oshpark.com/) for providing us with free coupons worth $100 for printing the prototype boards.
 -   Previous Edition: [SRA Board 2019](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd)
--   [Eagle Tutorials](https://www.youtube.com/playlist?list=PL868B73617C6F6FAD) 
+-   [Kicad Tutorials](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB) 
 -   [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
 ## License
