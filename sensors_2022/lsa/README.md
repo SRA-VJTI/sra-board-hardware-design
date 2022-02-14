@@ -60,7 +60,7 @@
 ### Connections
 To connect LSA with the SRA Board, connect the JST connector in the following way:
 <p align="center">
-<img src="assets/lsaconn.png" width="400" height = "550"> 
+<img src="https://github.com/omsheladia/sra-board-hardware-design/blob/master/documentation/images/LSA_images/lsaconn.png?raw=true" width="400" height = "550"> 
 </p>
 
 ### Working Principle
@@ -69,7 +69,7 @@ To connect LSA with the SRA Board, connect the JST connector in the following wa
 	- White Surface -> LOW absorptivity -> HIGH reflectivity
 - Demonstration
 <p align="center">
-<img src="https://github.com/SRA-VJTI/sra-board-hardware-design/blob/master/documentation/images/LSA_images/lsa_reflectivity.gif" width="650" height="500"> 
+<img src="https://github.com/omsheladia/sra-board-hardware-design/blob/master/documentation/images/LSA_images/lsa_reflectivity.gif?raw=true" width="650" height="500"> 
 </p>
 
 ### Applications
