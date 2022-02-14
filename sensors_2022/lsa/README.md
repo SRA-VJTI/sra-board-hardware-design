@@ -20,12 +20,12 @@
 
 - Physical PCB
 <p align="center">
-<img src="assets/lsafront.PNG" width="600" height = "350">
+<img src="https://github.com/SRA-VJTI/sra-board-hardware-design/blob/master/documentation/images/LSA_images/Lsa_front.png" width="600" height = "350">
 </p>
 
 - PCB Backside
 <p align="center">
-<img src="assets/lsaback.PNG" width="600" height = "350">
+<img src="https://github.com/SRA-VJTI/sra-board-hardware-design/blob/master/documentation/images/LSA_images/Lsa_back.png" width="600" height = "350">
 </p>
 
 ### Features
@@ -69,7 +69,7 @@ To connect LSA with the SRA Board, connect the JST connector in the following wa
 	- White Surface -> LOW absorptivity -> HIGH reflectivity
 - Demonstration
 <p align="center">
-<img src="assets/lsa_reflectivity.gif" width="650" height="500"> 
+<img src="https://github.com/SRA-VJTI/sra-board-hardware-design/blob/master/documentation/images/LSA_images/lsa_reflectivity.gif" width="650" height="500"> 
 </p>
 
 ### Applications
