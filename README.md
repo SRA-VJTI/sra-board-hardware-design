@@ -16,7 +16,7 @@
   <p align="center">
     ESP32-based Development Board
     <br />
-    <a href="https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/eagle">KICAD</a>
+    <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/renders">KICAD</a>
     ·
     <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/gerber_files">Gerber</a>
     ·
@@ -44,7 +44,6 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
   - [Major Changes in 2022](#major-changes-in-2022)
   - [Notable problems in the SRA Board 2019](#notable-problems-in-the-sra-board-2019)
   - [3D Models](#3d-models)
-  - [3D Models of 2020 Board](#3d-models-of-2020-board)
   - [Milestones](#milestones)
   - [Contributors](#contributors)
   - [Acknowledgements and Resources](#acknowledgements-and-resources)
@@ -82,7 +81,9 @@ In general, every development board has the following basic features:
 - ### Protection against [Reverse Voltage](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjc8aaX1c3rAhXXXSsKHXphBgQQFjABegQICxAD&url=https%3A%2F%2Fwww.ti.com%2Flit%2Fpdf%2Fslva139&usg=AOvVaw0Qbub75JJ986MzLv6FYWKE) and Over Current
     - The SRA Board 2019 used diodes for reverse voltage protection in the power-line.
     - For the overcurrent protection of MCU and motor driver circuit, fuses of 300mA and 3A were used respectively.
-    - The SRA Board 2022 uses PTC Resettable fuses for overcurrent protection.
+    - The SRA Board 2022  the following PTC Resettable fuses for overcurrent protection:
+       - RUEF160 - I_hold = 1.6A, I_trip = 3.2A
+       - RXEF050 - I_hold = 0.5 A, I_trip = 1A
 
 - ### Programmable Switches and LEDs
     - Every development board should have some programmable switches and LEDs for testing, control and debugging purposes.
@@ -99,7 +100,7 @@ In general, every development board has the following basic features:
 
 | Feature  |  SRA Board 2019  | SRA Board 2020| SRA Board 2022 |
 |:----:|:-------:| :-----: | :-----: |
-|[12V to 5V](#7805-5v-linear-regulator-to-lm2596-buck-convertor)  | LM7805 Linear Regulator | LM2596 Buck Convertor | LM2596 Buck Converter in SMD Package |
+|[12V to 5V](#7805-5v-linear-regulator-to-lm2576s5-buck-convertor)  | LM7805 Linear Regulator | LM2596 Buck Convertor | LM25765-S Buck Converter in SMD Package |
 |[5V to 3.3V](#ld33-33v-to-ams1117)| LD33 | AMS1117 | AMS1117 |
 |[Reverse Voltage Protection](#reverse-voltage-protection) | Diodes | P-MOSFET | SS34 SMD Diodes
 |[Motor Driver](#l298n-to-tb6612fng)| L298N| TB6612FNG|TB6612576|
@@ -109,10 +110,10 @@ In general, every development board has the following basic features:
 |[Connector Type](#connectors)| FRC Connectors | FRC Connectors | JST-PH Connectors | 
 |[Fuses](#fuses)| Glass Fuses | Glass Fuses | Resettable PTC Fuses| 
 |[Board Design](#shifting-from-tht-to-smd-components)| Bigger Dimensions with Bulky Components | Compact with THT Components | Compact with SMD Components and improved silkscreen | 
-- ### **7805 (5V linear regulator) to [LM2596 Buck Convertor](https://www.youtube.com/watch?v=m8rK9gU30v4)**
+- ### **7805 (5V linear regulator) to [LM2576S5 Buck Convertor](https://www.youtube.com/watch?v=m8rK9gU30v4)**
     - The greater efficiency, output current and reliability of LM2596 were the reasons for this change.
     - The efficiency of LM2596 is up to 92% which is significantly better than 7805. The LM2596 can provide current up to 3A, so  the MARIO workshop manipulator can now be run using onboard regulator.
-    - The present board further advanced by using a SMD packaging for the regulator to conserve on space and improve efficiency.
+    - The present board further advanced by using a SMD packaged LM2576S-5 buck converter chip to conserve on space and improve efficiency.
 - ### **LD33 (3.3V) to [AMS1117](http://www.advanced-monolithic.com/pdf/ds1117.pdf)**:
     - The previous edition used the LD33 IC to step down from 5V to 3.3V; several discussions resulted in the shift to more compact, reliable AMS1117(SOT-23) linear voltage regulator. (_AMS1117 is used in the ESP32-DevKitC V4 module_)
 
@@ -162,7 +163,7 @@ In general, every development board has the following basic features:
         1. According to the line sensor array (LSA) data, one can program 4 LEDs to turn on when the line sensor detects white  and turn off for black- line following debugging.
         2. If a motor is moving in a forward direction, the dedicated LEDs will be indicating IN1 is high and IN2 is low - motor control debugging.
     - In the 2022 board, the LED Array was switched to a SMD LED Resistor pair. This resulted in conservation of space along with longer life. 
-    - Also, the 2022 board further conserves space by using SMD switches which have a smaller dimension of 4.5mmx4.5mm compared to their 6mmx6mm older counterparts, achieving the same functionality.
+    - Also, the 2022 board further conserves space by using surface-mounted, tactile DPST Switches, often known as 'Push Buttons', which have a smaller dimension of 4.5mmx4.5mm compared to their 6mmx6mm older counterparts, achieving the same functionality.
 
 - ### **Connectors**
     - The earlier editions of the board used FRC (Flat Ribbon Cable) Connectors for connecting sensors with the SRA board. FRC Cables are formed by joining insulated wires in a flat shape forming the Ribbon shape which invariably means they take up a good amount of space.
@@ -175,12 +176,13 @@ In general, every development board has the following basic features:
 
 - ### **Fuses**
     - Bulky glass fuses in the earlier editions of the board were replaced by PTC or Positive Temperature Coefficient resettable fuses, enabling autorecovery from a temporary overload without any user intervention.
+    - As the load current increases, the resistance offered and voltage drop found across the fuse increases along with the temperature of the fuse.
     - A PTC fuse 'trips' by changing from a low resistance to a high resistance in order to limit current flow, which is much more desirable than a glass fuse that would melt open to interrupt the current flow and would have to be subsequently replaced.
 
 - ### **Shifting from THT to SMD Components**
     - A notable improvement in the 2022 board compared to previous years has been the switch from Through-Hole Technology (THT) to Surface Mounted Devices (SMD) for mounting components onto the board. 
     - This has helped the board design evolve with greater functionality, smaller size, and added utility, as the key differences between SMD and THT are (a) SMD does not require holes to be drilled through a PCB, (b) SMD components are much smaller, and (c) SMD components can be mounted on both sides of the board.
-    - The components that are now surface mounted in the new board include the two voltage regulators, [12V to 5V](#7805-5v-linear-regulator-to-lm2596-buck-convertor) and [5V to 3.3V](#ld33-33v-to-ams1117), [diodes](#reverse-voltage-protection), [LEDs and switches](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches) as well as general resitors (using 1206 SMD packages), inductors and capacitors.
+    - The components that are now surface mounted in the new board include the two voltage regulators, [12V to 5V](#7805-5v-linear-regulator-to-lm2576s5-buck-convertor) and [5V to 3.3V](#ld33-33v-to-ams1117), [diodes](#reverse-voltage-protection), [LEDs and switches](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches) as well as general resitors (using 1206 SMD packages), inductors and capacitors.
     - This has resulted in an overall reduction in the dimensions of the board from 8.1x11.1 cm to 8.1x9.26 cm, also allowing us to improve the silkscreen and overall look of the board.   
 
 ## Notable problems in the SRA Board 2019
@@ -204,15 +206,8 @@ In general, every development board has the following basic features:
 
 - 3D preview of the *[SRA Board 2022(New link yet to be attached)](https://a360.co/3c1Rjyv)*
 
-    1. The complete 3D model (.stl) file of [SRA Board 2022]()
-    2. The 3D models of motor driver, LEDs, ESP32 etc.: [3d models of other components](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3d_models/other_components_model)
-
-## 3D Models of 2020 Board
-
-- 3D preview of the *[SRA Board 2020](https://a360.co/3c1Rjyv)*
-
-    1. The complete 3D model (.stl) file of [SRA Board 2020](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3d_models/sra_board_model)
-    2. The 3D models of motor driver, LEDs, ESP32 etc.: [3d models of other components](https://github.com/SRA-VJTI/sraboard-hardware-design/tree/master/3d_models/other_components_model)
+    1. The complete 3D model (.cad and .step) files of [SRA Board 2022](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/3d_models/sra_board_model)
+    2. The 3D models of LSA and MPU models: [3d models of LSA and MPU models](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/3d_models)
 
 <!-- Milestone -->
 ## Milestones
@@ -230,8 +225,10 @@ In general, every development board has the following basic features:
 
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
 ## Acknowledgements and Resources
--   Thanks to [OSH](https://oshpark.com/) for providing us with free coupons worth $100 for printing the prototype boards.
--   Previous Edition: [SRA Board 2019](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd)
+-   Thanks to [PCBPowerMarket](https://www.pcbpower.com/) for sponsoring the first prototypes of the 2022 board.
+-   Previous Editions:
+    - 3d preview of the [SRA Board 2020](https://a360.co/3c1Rjyv) 
+    - [SRA Board 2019](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd)
 -   [Kicad Tutorials](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB) 
 -   [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
