@@ -16,7 +16,7 @@
   <p align="center">
     ESP32-based Development Board
     <br />
-    <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/renders">KICAD</a>
+    <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/sra_dev_board_2022">KICAD</a>
     ·
     <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/gerber_files">Gerber</a>
     ·
@@ -227,7 +227,9 @@ In general, every development board has the following basic features:
 ## Acknowledgements and Resources
 -   Thanks to [PCBPowerMarket](https://www.pcbpower.com/) for sponsoring the first prototypes of the 2022 board.
 -   Previous Editions:
-    - 3d preview of the [SRA Board 2020](https://a360.co/3c1Rjyv) 
+    - SRA Board 2020:
+      - [3d Preview](https://a360.co/3c1Rjyv) 
+      - [Github](https://github.com/SRA-VJTI/sra-board-hardware-design/archive/refs/tags/v2.2.zip)
     - [SRA Board 2019](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts/tree/master/WallE-2.1%202018%20Dev%20Brd)
 -   [Kicad Tutorials](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB) 
 -   [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
