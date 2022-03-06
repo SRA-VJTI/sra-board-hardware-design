@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/djshah11/Desktop/sra-board-hardware-design/sra_dev_board_2022/sra_dev_board_2022.kicad_sch</source>
-    <date>Tue Feb  1 01:56:04 2022</date>
+    <date>Thu Feb 17 02:52:23 2022</date>
     <tool>Eeschema 6.0.1-79c1e3a40b~116~ubuntu20.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -364,6 +364,15 @@
       <property name="Sheetfile" value="sra_dev_board_2022.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>4b06a024-7ba5-4e87-828c-bd2d7f0911c3</tstamps>
+    </comp>
+    <comp ref="J10">
+      <value>Conn_01x03_Male</value>
+      <footprint>pin_header_connectors:1X03</footprint>
+      <libsource lib="Connector" part="Conn_01x03_Male" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sra_dev_board_2022.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d11572a2-0ec3-435f-b83d-bf2571d2a572</tstamps>
     </comp>
     <comp ref="J11">
       <value>Conn_01x05_Male</value>
@@ -1238,7 +1247,6 @@
     </net>
     <net code="2" name="/2">
       <node ref="J5" pin="5" pinfunction="Pin_5" pintype="passive"/>
-      <node ref="SW2" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="SW2" pin="4" pinfunction="4" pintype="passive"/>
       <node ref="U1" pin="34" pinfunction="IO2" pintype="bidirectional"/>
     </net>
@@ -1266,7 +1274,6 @@
     </net>
     <net code="4" name="/4">
       <node ref="J5" pin="7" pinfunction="Pin_7" pintype="passive"/>
-      <node ref="SW1" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="SW1" pin="4" pinfunction="4" pintype="passive"/>
       <node ref="U1" pin="32" pinfunction="IO4" pintype="bidirectional"/>
     </net>
@@ -1278,6 +1285,7 @@
     <net code="6" name="/5V">
       <node ref="C2" pin="1" pintype="passive"/>
       <node ref="D13" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J10" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J11" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J11" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J11" pin="3" pinfunction="Pin_3" pintype="passive"/>
@@ -1334,18 +1342,17 @@
       <node ref="U1" pin="12" pinfunction="IO14" pintype="bidirectional"/>
     </net>
     <net code="13" name="/15">
+      <node ref="J10" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J5" pin="4" pinfunction="Pin_4" pintype="passive"/>
       <node ref="U1" pin="35" pinfunction="IO15" pintype="bidirectional"/>
     </net>
     <net code="14" name="/16">
       <node ref="J5" pin="8" pinfunction="Pin_8" pintype="passive"/>
-      <node ref="SW4" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="SW4" pin="4" pinfunction="4" pintype="passive"/>
       <node ref="U1" pin="31" pinfunction="IO16" pintype="bidirectional"/>
     </net>
     <net code="15" name="/17">
       <node ref="J5" pin="9" pinfunction="Pin_9" pintype="passive"/>
-      <node ref="SW3" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="SW3" pin="4" pinfunction="4" pintype="passive"/>
       <node ref="U1" pin="30" pinfunction="IO17" pintype="bidirectional"/>
     </net>
@@ -1519,6 +1526,7 @@
       <node ref="C6" pin="2" pintype="passive"/>
       <node ref="D14" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="J1" pin="14" pinfunction="Pin_14" pintype="passive"/>
+      <node ref="J10" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="J13" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J13" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J13" pin="3" pinfunction="Pin_3" pintype="passive"/>
@@ -1545,13 +1553,13 @@
       <node ref="R8" pin="2" pintype="passive"/>
       <node ref="R9" pin="2" pintype="passive"/>
       <node ref="SW1" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="SW1" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="SW2" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="SW2" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="SW2" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="SW3" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="SW3" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="SW3" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="SW4" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="SW4" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="SW4" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="T3" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="U1" pin="14" pinfunction="GND1" pintype="power_in"/>
       <node ref="U1" pin="20" pinfunction="GND3" pintype="power_in"/>
@@ -1680,6 +1688,18 @@
     </net>
     <net code="77" name="unconnected-(J8-Pad6)">
       <node ref="J8" pin="6" pinfunction="Pin_6" pintype="passive+no_connect"/>
+    </net>
+    <net code="78" name="unconnected-(SW1-Pad3)">
+      <node ref="SW1" pin="3" pinfunction="3" pintype="passive+no_connect"/>
+    </net>
+    <net code="79" name="unconnected-(SW2-Pad3)">
+      <node ref="SW2" pin="3" pinfunction="3" pintype="passive+no_connect"/>
+    </net>
+    <net code="80" name="unconnected-(SW3-Pad3)">
+      <node ref="SW3" pin="3" pinfunction="3" pintype="passive+no_connect"/>
+    </net>
+    <net code="81" name="unconnected-(SW4-Pad3)">
+      <node ref="SW4" pin="3" pinfunction="3" pintype="passive+no_connect"/>
     </net>
   </nets>
 </export>
