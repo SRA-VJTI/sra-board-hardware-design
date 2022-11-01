@@ -1,65 +1,70 @@
 # SRA Board 2022: Images
 
-1. Schematic image: 
+## Schematic image
+
 ![Schematic](board_images/schematic.png)
 
-2. Top Silkscreen:
-    <p align="center">
-    <img width="520" height="630" src="board_images/top_silkscreen.png">
-    </p>
+## Top Silkscreen
 
-3. Bottom Silkscreen:
-    <p align="center">
-    <img width="520" height="630" src="board_images/bottom_silkscreen.png">
-    </p>
+<p align="center">
+<img width="520" height="630" src="board_images/top_silkscreen.png">
+</p>
 
-4. Top Layer:
-    <p align="center">
-    <img width="520" height="606" src="board_images/top_layer.png">
-    </p>
+## Bottom Silkscreen
 
-5. Bottom Layer:
-    <p align="center">
-    <img width="520" height="606" src="board_images/bottom_layer.png">
-    </p>
+<p align="center">
+<img width="520" height="630" src="board_images/bottom_silkscreen.png">
+</p>
 
-6. Both Layers:
-    <p align="center">
-    <img width="520" height="606" src="board_images/both_layer.png">
-    </p>
+## Top Layer
 
-7. Top Layer with Polygon:
-    <p align="center">
-    <img width="436" height="606" src="board_images/top_layer_polygon.png">
-    </p>
+<p align="center">
+<img width="520" height="606" src="board_images/top_layer.png">
+</p>
 
-8. Bottom Layer with Polygon:
-    <p align="center">
-    <img width="436" height="556" src="board_images/bottom_layer_polygon.png">
-    </p>
+## Bottom Layer
 
-9. Front:
-    <p align="center">
-    <img width="600" height="630" src="board_images/front.png">
-    </p>
+<p align="center">
+<img width="520" height="606" src="board_images/bottom_layer.png">
+</p>
 
-10. Front_side1:
-    <p align="center">
-    <img width="600" height="630" src="board_images/front_side1.png">
-    </p>
+## Both Layers
 
-11. Front_side2:
-    <p align="center">
-    <img width="600" height="606" src="board_images/front_side2.png">
-    </p>
+<p align="center">
+<img width="520" height="606" src="board_images/both_layer.png">
+</p>
 
+## Top Layer with Polygon
 
-12. 3d View:
-    <p align="center">
-    <img width="600" height="606" src="board_images/side.png">
-    </p>
+<p align="center">
+<img width="436" height="606" src="board_images/top_layer_polygon.png">
+</p>
 
-12. Bottom View:
-    <p align="center">
-    <img width="600" height="606" src="board_images/bottom.png">
-    </p>
+## Bottom Layer with Polygon
+
+<p align="center">
+<img width="436" height="556" src="board_images/bottom_layer_polygon.png">
+</p>
+
+## Front
+
+<p align="center">
+<img width="600" height="630" src="board_images/front.png">
+</p>
+
+<p align="center">
+    <img align="top" src="./board_images/front_side_1.png" alt="front_side_1" width="300">
+    <img align="top" src="./board_images/front_side_2.png" alt="front_side_2" width="300">
+</div> 
+
+### 3d View
+
+<p align="center">
+<img width="700" height="606" src="../assets/3d_sideview.png">
+</p>
+
+### Bottom View
+
+<p align="center">
+<img width="600" height="606" src="board_images/bottom.png">
+</p>
