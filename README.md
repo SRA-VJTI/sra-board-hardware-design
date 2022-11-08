@@ -4,12 +4,11 @@
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
 
-
-<br />
+<br/>
 
 <p align="center">
   <a href="https://github.com/SRA-VJTI/sraboard-hardware-design">
-    <img src="/documentation/assets/logo.png" alt="Logo" width="200" height="120">
+    <img src="./documentation/assets/logo.png" alt="Logo" width="200" height="120">
   </a>
 
   <h3 align="center">SRA Development Board</h3>
@@ -37,13 +36,14 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
 ![](/documentation/assets/3d_sideview.png)
 
 ## Table of Contents
-- [SRA Board 2022](#sra-board-2022)
+- [SRA Board 2021-2022](#sra-board-2021-2022)
   - [Table of Contents](#table-of-contents)
+  - [Board Images](#board-images)
   - [About the Project](#about-the-project)
   - [Getting Started with a Development Board](#getting-started-with-a-development-board)
   - [Major Changes for 2022](#major-changes-for-2022)
-  - [Notable problems in previous SRA Boards <= 2019](#notable-problems-in-the-previous-sra-boards-2019)
-  - [Notable problems in the current SRA Board - 2023](#notable-problems-in-the-current-sra-board-2022)
+  - [Notable problems in the previous SRA Boards (2019)](#notable-problems-in-the-previous-sra-boards-2019)
+  - [Notable problems in the current SRA Board 2022](#notable-problems-in-the-current-sra-board-2022)
   - [3D Models](#3d-models)
   - [Milestones](#milestones)
   - [Contributors](#contributors)
@@ -53,14 +53,16 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
 ## Board Images
 - **Frontside**
 <p align="center">
-  <img width="410" height="450" src="/documentation/images/board_images/front.png">
+  <img width="410" height="450" src="./documentation/images/board_images/front.png">
 </p>
 
 - **Backside**
 <p align="center">
-  <img width="410" height="450" src="/documentation/images/board_images/bottom.png">
+  <img width="410" height="450" src="./documentation/images/board_images/bottom.png"/>
 </p>
+
 ## About the Project
+
 - This development board is used for the [Wall-E](https://github.com/SRA-VJTI/Wall-E) and [MARIO](https://github.com/SRA-VJTI/MARIO) workshops conducted by [SRA](https://github.com/SRA-VJTI).
 - Designed using KiCAD. The schematic and board files are [here](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/sra_dev_board_2022).
 - Resources for [previous work](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.2).  For more details of the SRA board 2020, checkout this [link](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.2/documentation).
@@ -70,7 +72,7 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
 ## Getting Started with a Development Board
 
 <p align="center">
-  <img width="410" height="400" src="/documentation/assets/boards_compare.png">
+  <img width="410" height="400" src="./documentation/assets/boards_compare.png">
 </p>
 
 In general, every development board has the following basic features:
@@ -156,7 +158,7 @@ In general, every development board has the following basic features:
         1. **Normal Mode**
         <br />
         <p align="center">
-        <img width="460" height="300" src="/documentation/assets/normal_mode.jpeg">
+        <img width="460" height="300" src="./documentation/assets/normal_mode.jpeg">
         </p>
 
         -  As discussed earlier, the new design has two motor drivers. Each TB6612FNG can control two motors. Therefore, using two motor driver one can control 4 motors using 8 GPIO's of ESP32.
@@ -167,7 +169,7 @@ In general, every development board has the following basic features:
         1. **Parallel Mode**
         <br />
         <p align="center">
-        <img width="460" height="300" src="/documentation/assets/parallel_mode.jpeg">
+        <img width="460" height="300" src="./documentation/assets/parallel_mode.jpeg">
         </p>
 
         -  The parallel mode is a special feature, used for high-rated motors, requiring more than the 1.2A current limit.
@@ -198,7 +200,7 @@ In general, every development board has the following basic features:
         - The solution for this issue was [Diode Auctioneering](http://doerry.org/norbert/papers/20190606-doerry-ashton-auctioneering-diodes.pdf).
 
         <p align="center">
-            <img width="460" height="300" src="/documentation/assets/diode_vin.png">
+            <img width="460" height="300" src="./documentation/assets/diode_vin.png"/>
         </p>
 
         - There is an inbuilt BAT760 diode on the USB line on ESP32. If different voltages are applied at Vusb and Vin, then the voltage with bigger magnitude will be given to LD1117 (LDO on ESP32); often the voltage will be the same on Vin and Vusb i.e 5V.
@@ -235,6 +237,7 @@ In general, every development board has the following basic features:
 
 <!-- Milestone -->
 ## Milestones
+
 - [x] Designing of the prototype board
 - [x] Modular testing of the circuit
 - [x] Testing of prototype board
@@ -254,12 +257,14 @@ In general, every development board has the following basic features:
 
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
 ## Acknowledgements and Resources
--   Thanks to [PCBPower Market](https://www.pcbpower.com/) for sponsoring the prototype and the final boards.
--   Previous Edition: [SRA Board 2020](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.2)
--   [KiCAD Tutorials](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB)
--   [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
+
+- Thanks to [PCBPower Market](https://www.pcbpower.com/) for sponsoring the prototype and the final boards.
+- Previous Edition: [SRA Board 2020](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.2)
+- [KiCAD Tutorials](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB)
+- [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
 ## License
+
 - Distributed under the [MIT License](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/LICENSE).
 
 
@@ -274,5 +279,3 @@ In general, every development board has the following basic features:
 
 [license-shield]: https://img.shields.io/github/license/SRA-VJTI/sra-board-hardware-design
 [license-url]: https://github.com/SRA-VJTI/sra-board-hardware-design/blob/master/LICENSE
-
-
