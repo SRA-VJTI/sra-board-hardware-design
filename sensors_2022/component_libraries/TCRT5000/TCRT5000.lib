@@ -1,0 +1,43 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# TCRT5000
+#
+DEF TCRT5000 U 0 40 Y N 1 L N
+F0 "U" -200 225 50 H V L BNN
+F1 "TCRT5000" -200 -225 50 H V L BNN
+F2 "OPTO_TCRT5000" 0 0 50 H I L BNN
+F3 "" 0 0 50 H I L BNN
+F4 "7.2mm" 0 0 50 H I L BNN "MAXIMUM_PACKAGE_HEIGHT"
+F5 "Manufacturer recommendations" 0 0 50 H I L BNN "STANDARD"
+F6 "1.7" 0 0 50 H I L BNN "PARTREV"
+F7 "Vishay" 0 0 50 H I L BNN "MANUFACTURER"
+DRAW
+P 2 0 0 6 -200 100 -100 100 N
+P 2 0 0 6 -100 100 -100 -100 N
+P 2 0 0 6 -100 -100 -200 -100 N
+P 4 0 0 6 -125 25 -75 25 -100 0 -125 25 f
+P 2 0 0 6 -125 0 -75 0 N
+P 2 0 0 6 -25 75 0 50 N
+P 2 0 0 6 0 50 -25 50 N
+P 2 0 0 6 -25 50 25 0 N
+P 2 0 0 6 25 25 25 0 N
+P 2 0 0 6 25 0 0 0 N
+P 2 0 0 6 75 75 75 0 N
+P 2 0 0 6 75 0 75 -75 N
+P 2 0 0 6 75 0 150 100 N
+P 2 0 0 6 150 100 200 100 N
+P 2 0 0 6 75 0 150 -100 N
+P 2 0 0 6 150 -100 200 -100 N
+P 4 0 0 6 125 -100 150 -100 150 -75 125 -100 f
+S -200 -200 200 200 0 0 6 f
+X ~ A -300 100 100 R 40 40 0 0 P 
+X ~ CATH -300 -100 100 R 40 40 0 0 P 
+X ~ COLL 300 100 100 L 40 40 0 0 P 
+X ~ E 300 -100 100 L 40 40 0 0 P 
+ENDDRAW
+ENDDEF
+#
+# End Library
