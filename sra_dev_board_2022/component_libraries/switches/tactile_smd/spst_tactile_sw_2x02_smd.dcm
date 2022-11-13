@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP TL3305AF160QG
-D Tactile Switches 50mA 12VDC SPST, NO 3.8mm Act 160gf
-K
-F http://spec_sheets.e-switch.com/specs/P010468.pdf
-$ENDCMP
-#
-#End Doc Library

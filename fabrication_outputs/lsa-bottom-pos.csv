@@ -1,0 +1,11 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"R1","150E","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-136.400000,-77.200000,90.000000,bottom
+"R2","4.7k","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-136.400000,-82.400000,90.000000,bottom
+"R3","150E","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-132.800000,-77.200000,90.000000,bottom
+"R4","4.7k","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-132.800000,-82.450000,90.000000,bottom
+"R5","150E","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-113.550000,-87.600000,180.000000,bottom
+"R6","4.7k","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-118.800000,-87.600000,180.000000,bottom
+"R7","150E","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-99.600000,-77.000000,90.000000,bottom
+"R8","4.7k","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-99.600000,-82.200000,90.000000,bottom
+"R9","150E","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-96.000000,-77.000000,90.000000,bottom
+"R10","4.7k","R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",-96.000000,-82.200000,90.000000,bottom
