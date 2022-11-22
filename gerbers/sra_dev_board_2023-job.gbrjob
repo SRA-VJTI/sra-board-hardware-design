@@ -3,13 +3,13 @@
     "GenerationSoftware": {
       "Vendor": "KiCad",
       "Application": "Pcbnew",
-      "Version": "6.0.9-8da3e8f707~116~ubuntu22.04.1"
+      "Version": "6.0.1-79c1e3a40b~116~ubuntu20.04.1"
     },
-    "CreationDate": "2022-11-22T16:05:20+05:30"
+    "CreationDate": "2022-11-22T21:03:41+05:30"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "sra_dev_board_2022",
+      "Name": "sra_dev_board_2023",
       "GUID": "7372615f-6465-4765-9f62-6f6172645f32",
       "Revision": "rev?"
     },
@@ -34,47 +34,47 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "sra_dev_board_2022-F_Cu.gbr",
+      "Path": "sra_dev_board_2023-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-B_Cu.gbr",
+      "Path": "sra_dev_board_2023-B_Cu.gbr",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-F_Paste.gbr",
+      "Path": "sra_dev_board_2023-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-B_Paste.gbr",
+      "Path": "sra_dev_board_2023-B_Paste.gbr",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-F_Silkscreen.gbr",
+      "Path": "sra_dev_board_2023-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-B_Silkscreen.gbr",
+      "Path": "sra_dev_board_2023-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "sra_dev_board_2022-F_Mask.gbr",
+      "Path": "sra_dev_board_2023-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "sra_dev_board_2022-B_Mask.gbr",
+      "Path": "sra_dev_board_2023-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "sra_dev_board_2022-Edge_Cuts.gbr",
+      "Path": "sra_dev_board_2023-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }
