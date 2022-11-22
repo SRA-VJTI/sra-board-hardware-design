@@ -378,11 +378,11 @@
   },
   "pcbnew": {
     "last_paths": {
-      "gencad": "",
+      "gencad": "../../../3d_models/mpu_model/mpu-2023.cad",
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../../3d_models/mpu_model/mpu-2023.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
