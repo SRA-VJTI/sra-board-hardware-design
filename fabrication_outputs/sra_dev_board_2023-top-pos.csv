@@ -40,7 +40,7 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "J14","Conn_01x03_Male","PinHeader_1x03_P2.54mm_Vertical",95.940000,-115.555000,180.000000,top
 "J15","Conn_01x03_Male","PinHeader_1x03_P2.54mm_Vertical",93.340000,-115.555000,180.000000,top
 "J16","Screw_Terminal_01x05","TerminalBlock_bornier-5_P5.08mm",76.200000,-72.390000,-90.000000,top
-"J17","Conn_01x06_Male","PinHeader_1x06_P2.54mm_Vertical",147.600000,-103.600000,180.000000,top
+"J17","Conn_01x06_Male","PinHeader_1x06_P2.54mm_Vertical",147.550000,-111.677727,180.000000,top
 "L1","100uH","CDRH127_inductor_smd",97.890735,-55.380000,0.000000,top
 "R1","330","R_0603_1608Metric",117.720000,-45.087500,90.000000,top
 "R2","330","R_0603_1608Metric",120.250000,-45.071250,90.000000,top
