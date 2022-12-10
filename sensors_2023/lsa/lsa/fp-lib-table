@@ -1,5 +1,4 @@
 (fp_lib_table
-  (lib (name "TCRT5000")(type "KiCad")(uri "/home/chinmay/Desktop/sra-board-hardware-design/sensors_2022/component_libraries/TCRT5000")(options "")(descr ""))
-  (lib (name "logos")(type "KiCad")(uri "/home/chinmay/Desktop/sra-board-hardware-design/sra_dev_board_2022/component_libraries/logos")(options "")(descr ""))
-  (lib (name "1")(type "KiCad")(uri "/home/chinmay/Desktop/sra-board-hardware-design/sensors_2022/component_libraries/TCRT5000")(options "")(descr "")(disabled))
+  (lib (name "TCRT5000")(type "KiCad")(uri "/home/chinmay/Desktop/sra-board-hardware-design/sensors_2023/component_libraries/TCRT5000")(options "")(descr ""))
+  (lib (name "logos")(type "KiCad")(uri "/home/chinmay/Desktop/sra-board-hardware-design/sra_dev_board_2023/component_libraries/logos")(options "")(descr ""))
 )
