@@ -4404,7 +4404,7 @@
     (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
     (uuid 3ce99d9f-e284-4e13-90b4-eee9427066ad)
   )
-  (text "DRV8825" (at 193.04 147.32 0)
+  (text "A4988\n" (at 193.04 147.32 0)
     (effects (font (size 2 2) (thickness 0.6) bold) (justify left bottom))
     (uuid 3d195008-3639-4437-8e90-244fe251e5a9)
   )

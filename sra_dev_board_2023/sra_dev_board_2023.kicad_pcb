@@ -59133,7 +59133,7 @@
   (gr_text "EN" (at 105.469048 116.2) (layer "B.SilkS") (tstamp cfd07ef2-175c-4409-981f-1b00a7f0cb6c)
     (effects (font (size 1 1) (thickness 0.25)) (justify left mirror))
   )
-  (gr_text "FLT" (at 84.8 100.8) (layer "B.SilkS") (tstamp d6220451-0068-4a60-a399-df8d4b8c904a)
+  (gr_text "VDD" (at 84.8 100.8) (layer "B.SilkS") (tstamp d6220451-0068-4a60-a399-df8d4b8c904a)
     (effects (font (size 1 1) (thickness 0.25)) (justify left mirror))
   )
   (gr_text "5" (at 136 95.8) (layer "B.SilkS") (tstamp d62706d6-b533-4fca-8893-edb5b6bd860b)
