@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/SRA-VJTI/sraboard-hardware-design">
-    <img src="./documentation/assets/logo.png" alt="Logo" width="200" height="120">
+    <img src="./documentation/assets/logo.png"  width="200" height="120">
   </a>
 
   <h3 align="center">SRA Development Board</h3>
@@ -25,11 +25,11 @@
   </p>
 
 <p align="center">
-<a href="https://oshpark.com/shared_projects/erADDDjN"><img src="https://oshpark.com/packs/media/images/badge-5f4e3bf4bf68f72ff88bd92e0089e9cf.png" alt="Order from OSH Park"></img></a>
+<a href="https://www.pcbpower.com/"><img src="./documentation/assets/pcb_power.jpeg"></img></a>
 </p>
 
 
-# SRA Board 2021-2022
+# SRA Board 2023
 
 The SRA board is a development board based on ESP32 with on-board peripherals like programmable LEDs, switches, sensor ports for Line Sensor Array and MPU-6050, protection circuit for over-current and reverse voltage and motor drivers.
 
