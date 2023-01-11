@@ -727,11 +727,6 @@
     (effects (font (size 3 3) bold) (justify left bottom))
     (uuid 2c95b518-8c7a-47d0-95ed-911c61b386ea)
   )
-  (text "Old Pin Definitions: (L2R)\nLSA_A0 34  - op amp 3\nLSA_A1 35  - op amp 4\nLSA_A2 36  - op amp 1\nLSA_A3 39  - op amp 2"
-    (at 13.4874 100.584 0)
-    (effects (font (size 3 3) bold) (justify left bottom))
-    (uuid 3eae0802-ea46-477a-95de-8785816ae852)
-  )
   (text "Line Sensor Array" (at 123.317 9.9314 0)
     (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
     (uuid 62c076a3-d618-44a2-9042-9a08b3576787)
@@ -740,8 +735,8 @@
     (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
     (uuid 683b22af-9796-4be5-8e45-77d0661eb54d)
   )
-  (text "New Pin Definations :\nLSA_A0 - 36\nLSA_A1 - 39\nLSA_A2 - 34\nLSA_A3 - 35\nLSA_A4 - 32"
-    (at 86.36 102.87 0)
+  (text "Pin Definations :\nLSA_A0 - 36\nLSA_A1 - 39\nLSA_A2 - 34\nLSA_A3 - 35\nLSA_A4 - 32"
+    (at 17.78 102.87 0)
     (effects (font (size 3 3) (thickness 0.6) bold) (justify left bottom))
     (uuid ffe26c71-a03c-41c1-92dd-e60b25b27eb5)
   )

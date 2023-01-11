@@ -1821,7 +1821,7 @@
       (net 1 "/A4_32") (pintype "passive") (tstamp 0130e734-b78d-4e56-bb9e-c4059f50ba28))
     (pad "E" thru_hole circle locked (at -2.75 1.27 270) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask)
       (net 12 "GND") (pintype "passive") (tstamp a17b26a5-2bb9-48a3-9123-daf31f582646))
-    (model "/home/chinmay/Desktop/sra-board-hardware-design/sensors_2023/component_libraries/TCRT5000/TCRT5000.step"
+    (model "${KIPRJMOD}/component_libraries/TCRT5000/TCRT5000.step"
       (offset (xyz -1 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -1876,7 +1876,7 @@
       (net 9 "/A2_34") (pintype "passive") (tstamp 2d6fac7b-87c1-4b92-bae6-5c8462b4d22f))
     (pad "E" thru_hole circle locked (at -2.75 1.27 270) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask)
       (net 12 "GND") (pintype "passive") (tstamp fd712a4a-25b7-461c-b1d1-af3763b125a2))
-    (model "/home/chinmay/Desktop/sra-board-hardware-design/sensors_2023/component_libraries/TCRT5000/TCRT5000.step"
+    (model "${KIPRJMOD}/component_libraries/TCRT5000/TCRT5000.step"
       (offset (xyz -1 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -1977,7 +1977,7 @@
       (net 8 "/A3_35") (pintype "passive") (tstamp 1c5d271d-a76c-4c10-b923-5ed64f0c42a9))
     (pad "E" thru_hole circle locked (at -2.75 1.27 270) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask)
       (net 12 "GND") (pintype "passive") (tstamp 6df1004c-3309-4929-b346-a51f91964fff))
-    (model "/home/chinmay/Desktop/sra-board-hardware-design/sensors_2023/component_libraries/TCRT5000/TCRT5000.step"
+    (model "${KIPRJMOD}/component_libraries/TCRT5000/TCRT5000.step"
       (offset (xyz -1 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -9200,7 +9200,7 @@
       (net 10 "/A1_39") (pintype "passive") (tstamp 5243566a-6b08-46af-b71a-af2b4b125cf9))
     (pad "E" thru_hole circle locked (at -2.75 1.27 270) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask)
       (net 12 "GND") (pintype "passive") (tstamp fab9cab9-8c75-40d6-852b-fd1ad64a85f6))
-    (model "/home/chinmay/Desktop/sra-board-hardware-design/sensors_2023/component_libraries/TCRT5000/TCRT5000.step"
+    (model "${KIPRJMOD}/component_libraries/TCRT5000/TCRT5000.step"
       (offset (xyz -1 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -9255,7 +9255,7 @@
       (net 11 "/A0_36") (pintype "passive") (tstamp 6002a440-503c-489e-b162-9a1fd74d2cd7))
     (pad "E" thru_hole circle locked (at -2.75 1.27 270) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask)
       (net 12 "GND") (pintype "passive") (tstamp 2bf7c315-8018-4f08-b1e1-d1aaf366f13c))
-    (model "/home/chinmay/Desktop/sra-board-hardware-design/sensors_2023/component_libraries/TCRT5000/TCRT5000.step"
+    (model "${KIPRJMOD}/component_libraries/TCRT5000/TCRT5000.step"
       (offset (xyz -1 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
