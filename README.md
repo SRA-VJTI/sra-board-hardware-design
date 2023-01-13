@@ -41,7 +41,7 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
   - [Board Images](#board-images)
   - [About the Project](#about-the-project)
   - [Getting Started with a Development Board](#getting-started-with-a-development-board)
-  - [Major Changes for 2022](#major-changes-for-2022)
+  - [Major Changes for 2023](#major-changes-for-2023)
   - [Notable problems in the previous SRA Boards (2019)](#notable-problems-in-the-previous-sra-boards-2019)
   - [Notable problems in the current SRA Board 2022](#notable-problems-in-the-current-sra-board-2022)
   - [3D Models](#3d-models)
@@ -78,11 +78,11 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
 In general, every development board has the following basic features:
 
 - ### Power Supply Unit
-  - Microcontrollers (MCUs) usually run on 3.3V or 5V logic supply voltage while input to a development board is normally 9V-12V for motor and driving/controlling peripheral devices depending upon the type of motors used.
+  - Microcontrollers (MCUs) usually run on 3.3V or 5V logic supply voltage while input to a development board is normally 9V-12V for motor and driving/controlling peripheral devices depending upon the type of motors used. (*We use 9V power supply*)
   - So, in order to have a single input source, a *power* section which inter converts this 9V to standard levels like 5V & 3.3V for MCU and sensors is present.This is achieved using a step-down [buck regulator](https://www.youtube.com/watch?v=m8rK9gU30v4).
   - Buck Regulator IC [LM2576-S-5](./datasheets/lm2576_buck_regulator.pdf) is used for stepping down the voltage from 9V to 5V DC. This 5V is further regulated to 3.3V using LDO IC [AMS1117-3.3](./datasheets/ams1117_ldo.pdf).
   - The previous edition of the SRA board (2022) used a similar buck regulator setup.
-  - The older editions of the SRA board used the same LM2576 linear voltage regulator, for stepping down from 12V to 5V; this powered the ESP32. Further, this 5V was converted to 3.3V using the LD33 linear voltage regulator, used by the sensor port.
+  - The older editions of the SRA board used the same LM2576 linear voltage regulator, for stepping down from 12V to 5V; this powered the ESP32. This edition steps down 9V to 5V but the voltage regulator remains the same. Further, this 5V was converted to 3.3V using the LD33 linear voltage regulator, used by the sensor port.
 
 - ### Motor Driver
     - Motors usually run on 9V-12V and MCU output is generally 5V/3.3V. So, an external motor driver circuitry is required to control motors according to the MCU input.
@@ -90,13 +90,13 @@ In general, every development board has the following basic features:
     - The older editions of SRA Board used the L298N IC for motor-control, which is a BJT-based H-Bridge motor driver.
 
 - ### Sensor Port
-    - According to the external sensor types, usually development boards have onboard sensor ports where the sensors can be connected easily. [LSA - Line Sensor Array]() and [MPU- Motion Processing Unit]() have on-board connection ports.
+    - According to the external sensor types, usually development boards have onboard sensor ports where the sensors can be connected easily. [LSA - Line Sensor Array](https://github.com/SRA-VJTI/sra-board-hardware-design/blob/master/documentation/images/LSA_images/Lsa_front.png) and [MPU- Motion Processing Unit]() have on-board connection ports.
     - The current edition uses easily available and efficient [JST XH connectors](https://en.wikipedia.org/wiki/JST_connector).
     - Previous versions used bulky [FRC connectors](https://www.sunrom.com/c/frc-idc-flat-cable-box-header#:~:text=FRC%20(Flat%20Ribon%20Cable)%20are,from%206%20to%2064%20pins.)
 
 - ### Protection against [Reverse Voltage](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjc8aaX1c3rAhXXXSsKHXphBgQQFjABegQICxAD&url=https%3A%2F%2Fwww.ti.com%2Flit%2Fpdf%2Fslva139&usg=AOvVaw0Qbub75JJ986MzLv6FYWKE)
     - The SRA Boards use diodes for reverse voltage protection in the power-line.
-    - 12V Motor line and power regulated line have been separated with [SS34](./datasheets/ss34_3A_schottky_diode.pdf) and [SS24](./datasheets/ss24_2A_schottky_diode.pdf) schottky diodes respectively.
+    - 9V Motor line and power regulated line have been separated with [SS34](./datasheets/ss34_3A_schottky_diode.pdf) and [SS24](./datasheets/ss24_2A_schottky_diode.pdf) schottky diodes respectively.
 
 - ### Protection against [Over Current](https://www.baypower.com/blog/what-is-overcurrent-protection/#:~:text=Overcurrent%20protection%20is%20the%20method,of%20a%20piece%20of%20equipment.)
     - Earlier, for the overcurrent protection of MCU and motor driver circuit, bulky glass fuses of 300mA and 3A were used respectively. After breakdown, they used to be replaced.
@@ -121,7 +121,9 @@ In general, every development board has the following basic features:
 |[12V to 5V](#7805-5v-linear-regulator-to-lm2596-buck-convertor)  | LM7805 Linear Regulator | LM2596 Buck Converter | LM2576-S Buck Converter | - |
 |[9V to 5V](#7805-5v-linear-regulator-to-lm2596-buck-convertor)  | - | - | - | LM2576-S Buck Converter |
 |[5V to 3.3V](#ld33-33v-to-ams1117)| LD33 | AMS1117-3.3 | AMS1117-3.3 | AMS1117-3.3 |
-|[Reverse Voltage Protection](#reverse-voltage-protection-diodes-to-p-mosfet) | Diodes | P-MOSFET | Diodes | Diodes | 
+|[Reverse Voltage Protection](#reverse-voltage-protection-diodes-to-p-mosfet) | Diodes | P-MOSFET | Diodes | Diodes |
+|[Line Sensing Arrays (LSA)](#lsa_2023) | Photodiodes| Photodiodes| Photodiodes| IR Sensors |
+|[Number of LSA Sensors](#num_of_sensors)| 4| 4| 4| 5 |
 |[Motor Driver](#l298n-to-tb6612fng)| L298N| TB6612FNG | TB6612FNG | TB6612FNG & A4988 |
 |[No. of Motor Channels](#motor-driver-modes)|2|4|4|4| 
 |[No. of Switches](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches)|2|4|4|4|
@@ -153,7 +155,9 @@ In general, every development board has the following basic features:
     - In the Previous and older editions, there were two ports for TB6612FNG Motor Drivers but **it has been updated to one TB6612FNG and one A4988 Stepper Motor Driver in the current SRA Board (2023).** 
     - A4988 Stepper Motor Driver **a microstepping driver for controlling bipolar stepper motors** which has built-in translator for easy operation. This means that we can control the stepper motor with just 2 pins from our controller, or one for controlling the rotation direction and the other for controlling the steps.
     - The Driver provides five different step resolutions: full-step, haft-step, quarter-step, eight-step and sixteenth-step. Also, it has a potentiometer for adjusting the current output, over-temperature thermal shutdown and crossover-current protection.
-    - 
+    <p align="center">
+        <img width="460" height="300" src="./documentation/assets/A4988_Stepper_Motor.png">
+    </p>
 - ### **Motor Driver Modes**
     - The new edition has 1x TB6612FNG motor driver and 1x A4988 Stepper motor driver which allow a maximum of 4 motors to be controlled. This motor driver is characterized by its operation in two modes - **Normal mode** and **Parallel mode**:   
         1. **Normal Mode**
