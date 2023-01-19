@@ -159,27 +159,27 @@ In general, every development board has the following basic features:
         <img width="460" height="300" src="./documentation/assets/A4988_Stepper_Motor.png">
     </p>
 - ### **Motor Driver Modes**
-    - The new edition has 1x TB6612FNG motor driver and 1x A4988 Stepper motor driver which allow a maximum of 4 motors to be controlled. This motor driver is characterized by its operation in two modes - **Normal mode** and **Parallel mode**:   
+    - The new edition has 1x TB6612FNG motor driver and 1x A4988 Stepper motor driver which allow a maximum of 2 motors to be controlled. This motor driver is characterized by its operation in two modes - **Normal mode** and **Parallel mode**:   
         1. **Normal Mode**
         <br />
         <p align="center">
-        <img width="460" height="300" src="./documentation/assets/normal_mode.jpeg">
+        <img width="460" height="300" src="./documentation/assets/normal_mode_2023.jpeg">
         </p>
 
-        -  As discussed earlier, the new design has two motor drivers. Each TB6612FNG can control two motors. Therefore, using two motor driver one can control 4 motors using 8 GPIO's of ESP32.
-        - E.g.: If pin 32 is HIGH(IN1 = HIHG) and pin 33 is low(IN2 = LOW) then motor 1 moves in the forward direction. 
-        - So in normal mode, 4 motors can be connected to the board, with a per channel/motor current capacity of 1.2A.
+        -  As discussed earlier, the new design has two motor drivers. 1x TB6612FNG and 1x A4988 Stepper motor driver. Therefore, using 1x TB6612FNG motor driver one can control 2 motors using 4 GPIO's of ESP32.
+        - E.g.: If pin 12 is HIGH(IN1 = HIGH) and pin 33 is low(IN2 = LOW) then motor 1 moves in the forward direction. 
+        - So in normal mode, 2 motors can be connected to the board, with a per channel/motor current capacity of 1.2A.
         <br/><br/>
 
         1. **Parallel Mode**
         <br />
         <p align="center">
-        <img width="460" height="300" src="./documentation/assets/parallel_mode.jpeg">
+        <img width="460" height="300" src="./documentation/assets/parallel_mode_2023.jpeg">
         </p>
 
         -  The parallel mode is a special feature, used for high-rated motors, requiring more than the 1.2A current limit.
-        -  In this mode, the channel's directional pins and output pins are shorted; only one motor is connected to a motor driver i.e. two channels, giving a current capacity of 2.4A. Thus, two high rated motors can be controlled using ESP32.
-        -  Note: The directional pin shorting is done by a manual DPDT switch. If the user turns on TB_A switch then the first motor driver goes into the parallel mode and its directional pins are shorted, where GPIO connections are IN1 = IN3 = 25 and IN2 = IN4 = 26. If TB_A switch is off, then the first motor driver goes into normal mode where IN1 = 32: IN2 = 33: IN3 = 25: IN4 = 26. This is all done automatically. Also for parallel mode, the J1, J2, J3 and J4 junctions need to be shorted.
+        -  In this mode, the channel's directional pins and output pins are shorted; only one motor is connected to a motor driver i.e. two channels, giving a current capacity of 2.4A. Thus, 1 high rated motor can be controlled using ESP32.
+        -  Note: The directional pin shorting is done by a manual DPDT switch. If the user turns on TB_A switch then the first motor driver goes into the parallel mode and its directional pins are shorted, where GPIO connections are IN1 = IN3 = 25 and IN2 = IN4 = 26. This is all done automatically. Also for parallel mode, the J1 and J2 junctions need to be shorted.
         <br/><br/>
 
 - ### **Moving back from the vintage Bar-graph LEDs to LED array and more switches**
@@ -265,7 +265,7 @@ In general, every development board has the following basic features:
 ## Acknowledgements and Resources
 
 - Thanks to [PCBPower Market](https://www.pcbpower.com/) for sponsoring the prototype and the final boards.
-- Previous Edition: [SRA Board 2020](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.2)
+- Previous Edition: [SRA Board 2022](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.3)
 - [KiCAD Tutorials](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB)
 - [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
