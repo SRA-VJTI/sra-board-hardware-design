@@ -1,9 +1,0 @@
-(sym_lib_table
-  (lib (name "dc_power_jack")(type "Legacy")(uri "${KIPRJMOD}/component_libraries/power_jack/dc_power_jack.lib")(options "")(descr ""))
-  (lib (name "ESP32-DEVKITCv4-32D")(type "Legacy")(uri "${KIPRJMOD}/component_libraries/MCU_ESP32/ESP32-DEVKITCv4-32D.lib")(options "")(descr ""))
-  (lib (name "TB6612FNG")(type "Legacy")(uri "${KIPRJMOD}/component_libraries/motor_driver/TB6612FNG.lib")(options "")(descr ""))
-  (lib (name "LM2576_buck_smd")(type "Legacy")(uri "${KIPRJMOD}/component_libraries/regulator/LM2576_buck_smd.lib")(options "")(descr ""))
-  (lib (name "spst_tactile_sw_2x02_smd")(type "Legacy")(uri "${KIPRJMOD}/component_libraries/switches/tactile_smd/spst_tactile_sw_2x02_smd.lib")(options "")(descr ""))
-  (lib (name "RXEF050")(type "Legacy")(uri "${KIPRJMOD}/component_libraries/ptc_fuse/RXEF050_1A_trip/RXEF050.lib")(options "")(descr ""))
-  (lib (name "RUEF160")(type "Legacy")(uri "${KIPRJMOD}/component_libraries/ptc_fuse/RUEF150_3,2A_trip/RUEF160.lib")(options "")(descr ""))
-)
