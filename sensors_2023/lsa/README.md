@@ -20,11 +20,11 @@
 
 - Physical PCB
 <p align="center">
-<img src="./documentation/images/LSA_images/Lsa_front.png" width="600" height = "350">
+<img src="/documentation/images/LSA_images/Lsa_front.png" width="600" height = "350">
 </p>
 
 <p align="center">
-<img src="./documentation/images/LSA_images/Lsa_front_pinout.png" width="600" height = "350">
+<img src="/documentation/images/LSA_images/Lsa_front_pinout.png" width="600" height = "350">
 </p>
 
 - PCB Backside
