@@ -56,6 +56,7 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "R12","1k","R_1206_3216Metric",95.080000,-82.600000,90.000000,top
 "R13","1k","R_1206_3216Metric",98.100000,-88.040000,90.000000,top
 "R14","1k","R_1206_3216Metric",95.100000,-88.030000,90.000000,top
+"R15","4.7k","R_0603_1608Metric",137.500000,-45.100000,-90.000000,top
 "SW1","SW_Push_Dual","spst_tactile_sw_2x02_smd",122.674490,-54.360000,180.000000,top
 "SW2","SW_Push_Dual","spst_tactile_sw_2x02_smd",122.670000,-60.240000,180.000000,top
 "SW3","SW_Push_Dual","spst_tactile_sw_2x02_smd",132.600000,-60.220000,180.000000,top
