@@ -42,7 +42,7 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
   - [Board Images](#board-images)
   - [About the Project](#about-the-project)
   - [Getting Started with a Development Board](#getting-started-with-a-development-board)
-  - [Major Changes for 2022](#major-changes-for-2022)
+  - [Major Changes for 2023](#major-changes-for-2023)
   - [Notable problems in the previous SRA Boards (2019)](#notable-problems-in-the-previous-sra-boards-2019)
   - [Notable problems in the current SRA Board 2022](#notable-problems-in-the-current-sra-board-2022)
   - [3D Models](#3d-models)
@@ -131,7 +131,9 @@ In general, every development board has the following basic features:
 |[Number of LSA Sensors](#num_of_sensors)| 4| 4| 4| 5 |
 |[Motor Driver](#l298n-to-tb6612fng)| L298N| TB6612FNG | TB6612FNG | TB6612FNG  |
 | [Stepper Motor Driver](#stepper-motor-driver-port-a4988) | - | - | - | A4988 |
-|[No. of Motor Channels](#motor-driver-modes)|2|4|4|4| 
+|[No. of Motor Channels](#motor-driver-modes)|2|4|4|4|
+|[No. of Stepper Motor Channels](#stepper-motor-driver-port-a4988)|0|0|0|1|
+|[No. of DC Motor Channels](#motor-driver-mode)|2|4|4|2|
 |[No. of Switches](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches)|2|4|4|4|
 |[No. of LEDs](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches)|2|8|8|8|
 |[Over Current Protection](#protection-against-over-current)  | Bulky Glass Fuses | Bulky Glass Fuses | PTC Resettable Fuses| PTC Resettable Fuses|
@@ -169,16 +171,16 @@ In general, every development board has the following basic features:
         <img width="460" height="300" src="./documentation/assets/A4988_Stepper_Motor.png">
     </p>
 - ### **Motor Driver Modes**
-    - The new edition has 2x TB6612FNG motor drivers which allow a maximum of 4 motors to be controlled. This motor driver is characterized by its operation in two modes - **Normal mode** and **Parallel mode**:   
+    - The new edition has 1x TB6612FNG motor drivers which allow a maximum of 2 motors to be controlled. This motor driver is characterized by its operation in two modes - **Normal mode** and **Parallel mode**:   
         1. **Normal Mode**
         <br />
         <p align="center">
         <img width="460" height="300" src="./documentation/assets/normal_mode.jpeg">
         </p>
 
-        -  As discussed earlier, the new design has two motor drivers. Each TB6612FNG can control two motors. Therefore, using two motor driver one can control 4 motors using 8 GPIO's of ESP32.
+        -  As discussed earlier, the new design has two motor drivers. 1x TB6612FNG and 1x A4988 Stepper motor driver. Therefore, using 1x TB6612FNG motor driver one can control 2 motors using 4 GPIO's of ESP32.
         - E.g.: If pin 32 is HIGH(IN1 = HIHG) and pin 33 is low(IN2 = LOW) then motor 1 moves in the forward direction. 
-        - So in normal mode, 4 motors can be connected to the board, with a per channel/motor current capacity of 1.2A.
+        - So in normal mode, 2 motors can be connected to the board, with a per channel/motor current capacity of 1.2A.
         <br/><br/>
 
         1. **Parallel Mode**
@@ -188,8 +190,8 @@ In general, every development board has the following basic features:
         </p>
 
         -  The parallel mode is a special feature, used for high-rated motors, requiring more than the 1.2A current limit.
-        -  In this mode, the channel's directional pins and output pins are shorted; only one motor is connected to a motor driver i.e. two channels, giving a current capacity of 2.4A. Thus, two high rated motors can be controlled using ESP32.
-        -  Note: The directional pin shorting is done by a manual DPDT switch. If the user turns on TB_A switch then the first motor driver goes into the parallel mode and its directional pins are shorted, where GPIO connections are IN1 = IN3 = 25 and IN2 = IN4 = 26. If TB_A switch is off, then the first motor driver goes into normal mode where IN1 = 32: IN2 = 33: IN3 = 25: IN4 = 26. This is all done automatically. Also for parallel mode, the J1, J2, J3 and J4 junctions need to be shorted.
+        -  In this mode, the channel's directional pins and output pins are shorted; only one motor is connected to a motor driver i.e. two channels, giving a current capacity of 2.4A. Thus, one high rated motors can be controlled using ESP32.
+        -  Note: The directional pin shorting is done by a manual DPDT switch. If the user turns on TB_A switch then the first motor driver goes into the parallel mode and its directional pins are shorted, where GPIO connections are IN1 = IN3 = 25 and IN2 = IN4 = 26. This is all done automatically. Also for parallel mode, the J1 and J2 junctions need to be shorted. 
         <br/><br/>
 
 - ### **Moving back from the vintage Bar-graph LEDs to LED array and more switches**
@@ -245,10 +247,8 @@ In general, every development board has the following basic features:
 
 ## 3D Models
 
-- 3D preview of the *[SRA Board 2022](https://a360.co/3c1Rjyv)*
-
-    1. The complete 3D model (.step) file of [SRA Board 2020](./3d_models/sra_board_model/sra_dev_board_2022.step)
-    2. The 3D models of motor driver, LEDs, ESP32 etc.: [3d models of other components](./3d_models/)
+1. The complete 3D model (.step) file of [SRA Board 2023](./3d_models/sra_board_model/sra_dev_board_2023.step)
+2. The 3D models of motor driver, LEDs, ESP32 etc.: [3d models of other components](./3d_models/)
 
 <!-- Milestone -->
 ## Milestones
@@ -262,10 +262,11 @@ In general, every development board has the following basic features:
 <!-- CONTRIBUTORS -->
 ## Contributors
 
-- [Dhairya Shah](https://github.com/dhairyashah1): *Designer*
-- [Omkar Bhilare](https://github.com/ombhilare999): *Mentor*
+- [Chinmay Lonkar](https://github.com/ChinmayLonkar): *Designer*
+- [Dhairya Shah](https://github.com/dhairyashah1): *Mentor*
+<!-- - [Omkar Bhilare](https://github.com/ombhilare999): *Mentor*
 - [VedantParanjape](https://github.com/VedantParanjape): *Mentor*
-<!-- - [Dhiraj Patil](https://github.com/dhirajp15): *Mentor*
+- [Dhiraj Patil](https://github.com/dhirajp15): *Mentor*
 - [Saurabh Gupta](https://github.com/saurabh1002): *Mentor*
 - [Udit Patadia](https://github.com/udit7395): *Mentor*
 - [Laukik Hase](https://github.com/laukik-hase): *Mentor* -->
