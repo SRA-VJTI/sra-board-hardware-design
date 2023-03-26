@@ -131,9 +131,8 @@ In general, every development board has the following basic features:
 |[Number of LSA Sensors](#num_of_sensors)| 4| 4| 4| 5 |
 |[Motor Driver](#l298n-to-tb6612fng)| L298N| TB6612FNG | TB6612FNG | TB6612FNG  |
 | [Stepper Motor Driver](#stepper-motor-driver-port-a4988) | - | - | - | A4988 |
-|[No. of Motor Channels](#motor-driver-modes)|2|4|4|4|
+|[No. of DC Motor Channels](#motor-driver-modes)|2|4|4|2|
 |[No. of Stepper Motor Channels](#stepper-motor-driver-port-a4988)|0|0|0|1|
-|[No. of DC Motor Channels](#motor-driver-mode)|2|4|4|2|
 |[No. of Switches](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches)|2|4|4|4|
 |[No. of LEDs](#moving-back-to-the-vintage-bar-graph-leds-and-more-switches)|2|8|8|8|
 |[Over Current Protection](#protection-against-over-current)  | Bulky Glass Fuses | Bulky Glass Fuses | PTC Resettable Fuses| PTC Resettable Fuses|
