@@ -182,7 +182,7 @@ In general, every development board has the following basic features:
         - So in normal mode, 2 motors can be connected to the board, with a per channel/motor current capacity of 1.2A.
         <br/><br/>
 
-        2. **Parallel Mode**
+        2. **Parallel Mode(Not in use in the latest SRA Board)**
         <br />
         <p align="center">
         <img width="460" height="300" src="./documentation/assets/parallel_mode.jpeg">
@@ -191,7 +191,7 @@ In general, every development board has the following basic features:
         -  The parallel mode is a special feature, used for high-rated motors, requiring more than the 1.2A current limit.
         -  In this mode, the channel's directional pins and output pins are shorted; only one motor is connected to a motor driver i.e. two channels, giving a current capacity of 2.4A. Thus, one high rated motors can be controlled using ESP32.
         -  Note: The directional pin shorting is done by a manual DPDT switch. If the user turns on TB_A switch then the first motor driver goes into the parallel mode and its directional pins are shorted, where GPIO connections are IN1 = IN3 = 25 and IN2 = IN4 = 26. This is all done automatically. Also for parallel mode, the J1 and J2 junctions need to be shorted. 
-        -  There was a redundancy of Parallel mode hence in this years SRA Board the parallel mode was removed.        <br/><br/>
+        -  Parallel mode has been discontinued in the current SRA Board.        <br/><br/>
 
 - ### **Moving back from the vintage Bar-graph LEDs to LED array and more switches**
     - The older edition used a pair of programmable switches and LEDs each.
