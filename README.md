@@ -32,7 +32,7 @@
 
 The SRA board is a development board based on ESP32 with on-board peripherals like programmable LEDs, switches, sensor ports for Line Sensor Array and MPU-6050, protection circuit for over-current and reverse voltage and motor drivers.
 
-![](/documentation/assets/3d_sideview.png)
+![](/documentation/images/frontside_1.png)
 
 ## Table of Contents
 - [SRA Board 2023-24](#sra-board-2023-24)
@@ -269,7 +269,7 @@ In general, every development board has the following basic features:
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
 ## Acknowledgements and Resources
 
-- Previous Edition: [SRA Board 2022-23](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.3)
+- Previous Edition: [SRA Board 2022-23](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.4)
 - [KiCAD Tutorials](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB)
 - [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
