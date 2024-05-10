@@ -1,0 +1,33 @@
+Drill report for sra_dev_board_2023.kicad_pcb
+Created on 04-05-2024 18:26:09
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'sra_dev_board_2023-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.400mm  0.0157"  (62 holes)
+    T2  0.711mm  0.0280"  (4 holes)
+    T3  0.800mm  0.0315"  (3 holes)  (with 3 slots)
+    T4  0.813mm  0.0320"  (12 holes)
+    T5  1.000mm  0.0394"  (19 holes)  (with 1 slot)
+    T6  1.016mm  0.0400"  (69 holes)
+    T7  1.040mm  0.0409"  (38 holes)
+    T8  1.050mm  0.0413"  (2 holes)
+    T9  1.300mm  0.0512"  (2 holes)
+    T10  1.320mm  0.0520"  (16 holes)
+    T11  1.520mm  0.0598"  (5 holes)
+
+    Total plated holes count 232
+
+
+Drill file 'sra_dev_board_2023-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  3.200mm  0.1260"  (4 holes)
+
+    Total unplated holes count 4

@@ -1,0 +1,17 @@
+Info: Output directory 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024' created.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-F_Cu.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-B_Cu.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-F_Paste.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-B_Paste.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-F_Mask.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-B_Mask.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-User_Drawings.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-Edge_Cuts.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-Margin.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-F_Courtyard.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-F_Fab.gbr'.
+Plotted to 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-B_Fab.gbr'.
+Created Gerber job file 'C:\Users\Atharva\Downloads\SRA Board 23-24\sra-board-hardware-design-2024\sra-board-hardware-design\gerber-2024\sra_dev_board_2023-job.gbrjob'.
+Info: Done.
