@@ -263,7 +263,7 @@ In general, every development board has the following basic features:
 ## Contributors
 
 - [Raj Gupta](https://github.com/RajGupta17): *Designer*
-- [Atharva Atre](https://github.com/AtharvaAtre): *Co-designer*
+- [Atharva Atre](https://github.com/AtharvaAtre): *Author*
 - [Chinmay Lonkar](https://github.com/ChinmayLonkar): *Mentor*
 
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
