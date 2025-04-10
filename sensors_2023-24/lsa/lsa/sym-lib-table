@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "TCRT5000")(type "Legacy")(uri "${KIPRJMOD}/component_libraries/TCRT5000/TCRT5000.lib")(options "")(descr ""))
-)

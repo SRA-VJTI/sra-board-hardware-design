@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP RXEF050-2
+D Resettable Fuses - PPTC Radial Lead .5A 72V 40A Imax
+K
+F https://www.littelfuse.com/~/media/electronics/product_specifications/resettable_ptcs/littelfuse_ptc_rxef050_product_specification.pdf.pdf
+$ENDCMP
+#
+#End Doc Library

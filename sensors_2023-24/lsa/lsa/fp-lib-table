@@ -1,4 +1,0 @@
-(fp_lib_table
-  (lib (name "logos")(type "KiCad")(uri "/home/chinmay/Desktop/sra-board-hardware-design/sra_dev_board_2023/component_libraries/logos")(options "")(descr ""))
-  (lib (name "TCRT5000")(type "KiCad")(uri "${KIPRJMOD}/component_libraries/TCRT5000")(options "")(descr ""))
-)

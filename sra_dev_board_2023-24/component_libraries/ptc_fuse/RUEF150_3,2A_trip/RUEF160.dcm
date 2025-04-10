@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP RUEF160
-D Littelfuse 1.6A Radial Leaded PCB Mount Resettable Fuse, 30V dc
-K
-F https://datasheet.datasheetarchive.com/originals/dk/DKDS-14/271765.pdf
-$ENDCMP
-#
-#End Doc Library

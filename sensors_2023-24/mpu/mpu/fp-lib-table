@@ -1,4 +1,0 @@
-(fp_lib_table
-  (lib (name "logos")(type "KiCad")(uri "/home/djshah11/Desktop/sra-board-hardware-design/sra_dev_board_2022/component_libraries/logos")(options "")(descr ""))
-  (lib (name "component_libraries")(type "KiCad")(uri "/home/djshah11/Desktop/sra-board-hardware-design/sensors_2022/component_libraries")(options "")(descr ""))
-)

@@ -1,6 +1,3 @@
-
-
-
 <!-- PROJECT LOGO -->
 [![Stargazers][stars-shield]][stars-url]
 [![Forks][forks-shield]][forks-url]
@@ -18,31 +15,31 @@
   <p align="center">
     ESP32-based Development Board
     <br />
-    <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/sra_dev_board_2022">KiCAD</a>
+    <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/sra_dev_board_2024">KiCAD</a>
     ·
-    <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/gerber_files">Gerber</a>
+    <a href="https://github.com/AtharvaAtre/SRA-Board/tree/master/gerbers">Gerber</a>
     ·
-    <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/blob/master/documentation/images/sra_board_images.md#sra-board-2020-images">Images</a>
+    <a href="https://github.com/AtharvaAtre/SRA-Board/blob/master/documentation/images/board_images/front.png">Images</a>
     ·
     <a href="https://a360.co/3c1Rjyv">3D Model</a>
   </p>
 
 
-# SRA Board 2023-24
+# SRA Board 2024
 
 The SRA board is a development board based on ESP32 with on-board peripherals like programmable LEDs, switches, sensor ports for Line Sensor Array and MPU-6050, protection circuit for over-current and reverse voltage and motor drivers.
 
 ![](/documentation/images/board_images/front_side_1.png)
 
 ## Table of Contents
-- [SRA Board 2023-24](#sra-board-2023-24)
+- [SRA Board 2024](#sra-board-2024)
   - [Table of Contents](#table-of-contents)
   - [Board Images](#board-images)
   - [About the Project](#about-the-project)
   - [Getting Started with a Development Board](#getting-started-with-a-development-board)
-  - [Major Changes for 2023-24](#major-changes-for-2023-24)
-  - [Notable problems in the previous SRA Boards (2019)](#notable-problems-in-the-previous-sra-boards-2019)
-  - [Notable problems in the current SRA Board 2023](#notable-problems-in-the-current-sra-board-2023)
+  - [Major Changes for 2024 SRA Board](#major-changes-for-2024)
+  - [Notable problems in the previous SRA Boards](#notable-problems-in-the-previous-sra-boards)
+  - [Notable problems in the current SRA Board](#notable-problems-in-the-current-sra-board)
   - [3D Models](#3d-models)
   - [Milestones](#milestones)
   - [Contributors](#contributors)
@@ -68,9 +65,9 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
 ## About the Project
 
 - This development board is used for the [Wall-E](https://github.com/SRA-VJTI/Wall-E) and [MARIO](https://github.com/SRA-VJTI/MARIO) workshops conducted by [SRA](https://github.com/SRA-VJTI).
-- Designed using KiCAD. The schematic and board files are [here](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/sra_dev_board_2022).
-- Resources for [previous work](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.2).  For more details of the SRA board 2020, checkout this [link](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.2/documentation).
-- The SRA board 2020 images can be found [here](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.2/documentation/images).
+- Designed using KiCAD. The schematic and board files are [here](https://github.com/AtharvaAtre/SRA-Board/tree/master/sra_dev_board_2024).
+- Resources for [previous work](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.2).  For more details of the SRA board 2020, checkout this [link](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.4).
+- The SRA board 2023 images can be found [here](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.4/documentation/images).
 - Older versions of the board and miscellaneous designs can be found [here](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts).
 
 ## Getting Started with a Development Board
@@ -85,7 +82,7 @@ In general, every development board has the following basic features:
   - Microcontrollers (MCUs) usually run on 3.3V or 5V logic supply voltage while input to a development board is normally 12V for motor and driving/controlling peripheral devices.
   - So, in order to have a single input source, a *power* section which inter converts this 12V to standard levels like 5V & 3.3V for MCU and sensors is present.This is achieved using a step-down [buck regulator](https://www.youtube.com/watch?v=m8rK9gU30v4).
   - Buck Regulator IC [LM2576-S-5](./datasheets/lm2576_buck_regulator.pdf) is used for stepping down the voltage from 12V to 5V DC. This 5V is further regulated to 3.3V using LDO IC [AMS1117-3.3](./datasheets/ams1117_ldo.pdf).
-  - The previous edition of the SRA board (2022-23) used a similar buck regulator setup.
+  - The previous edition of the SRA board (2023) also used a similar buck regulator setup.
   - The older editions of the SRA board used the LM7805 linear voltage regulator, for stepping down from 12V to 5V; this powered the ESP32. Further, this 5V was converted to 3.3V using the LD33 linear voltage regulator, used by the sensor port.
 
 - ### Motor Driver
@@ -119,7 +116,7 @@ In general, every development board has the following basic features:
 > Now that we covered basics of development boards, let us talk about the changes made in the new design. 
 
 ## Major Changes IN SRA Board Over the years from 2020-2024
-| Feature  |  SRA Board 2020-21  | SRA Board 2021-22 | SRA Board 2022-23 | SRA Board 2023-24 |
+| Feature  |  SRA Board 2021  | SRA Board 2022 | SRA Board 2023 | SRA Board 2024 |
 |:----:|:-------:| :-----: | :-----: | :-----: |
 |[12V to 5V](#7805-5v-linear-regulator-to-lm2596-buck-convertor)  | LM2596 Buck Convertor | LM2596 Buck Converter | LM2576-S Buck Converter | LM2576-S Buck Converter |
 |[5V to 3.3V](#ld33-33v-to-ams1117)| AMS1117-3.3 | AMS1117-3.3 | AMS1117-3.3 | AMS1117-3.3 |
@@ -169,29 +166,6 @@ In general, every development board has the following basic features:
     <p align="center">
         <img width="460" height="300" src="./documentation/assets/A4988_Stepper_Motor.png">
     </p>
-- ### **Motor Driver Modes**
-    - The new edition has 1x TB6612FNG motor drivers which allow a maximum of 2 motors to be controlled. This motor driver is characterized by its operation in two modes - **Normal mode** and **Parallel mode**:   
-        1. **Normal Mode**
-        <br />
-        <p align="center">
-        <img width="460" height="300" src="./documentation/assets/normal_mode.jpeg">
-        </p>
-
-        -  As discussed earlier, the new design has two motor drivers. 1x TB6612FNG and 1x A4988 Stepper motor driver. Therefore, using 1x TB6612FNG motor driver one can control 2 motors using 4 GPIO's of ESP32.
-        - E.g.: If pin 32 is HIGH(IN1 = HIHG) and pin 33 is low(IN2 = LOW) then motor 1 moves in the forward direction. 
-        - So in normal mode, 2 motors can be connected to the board, with a per channel/motor current capacity of 1.2A.
-        <br/><br/>
-
-        2. **Parallel Mode(Not in use in the latest SRA Board)**
-        <br />
-        <p align="center">
-        <img width="460" height="300" src="./documentation/assets/parallel_mode.jpeg">
-        </p>
-
-        -  The parallel mode is a special feature, used for high-rated motors, requiring more than the 1.2A current limit.
-        -  In this mode, the channel's directional pins and output pins are shorted; only one motor is connected to a motor driver i.e. two channels, giving a current capacity of 2.4A. Thus, one high rated motors can be controlled using ESP32.
-        -  Note: The directional pin shorting is done by a manual DPDT switch. If the user turns on TB_A switch then the first motor driver goes into the parallel mode and its directional pins are shorted, where GPIO connections are IN1 = IN3 = 25 and IN2 = IN4 = 26. This is all done automatically. Also for parallel mode, the J1 and J2 junctions need to be shorted. 
-        -  Parallel mode has been discontinued in the current SRA Board.        <br/><br/>
 
 - ### **Moving back from the vintage Bar-graph LEDs to LED array and more switches**
     - The older edition used a pair of programmable switches and LEDs each.
@@ -205,8 +179,7 @@ In general, every development board has the following basic features:
         2. If a motor is moving in a forward direction, the dedicated LEDs will be indicating IN1 is high and IN2 is low - motor control debugging.
 
 
-## Notable problems in the previous SRA Boards (2019)
-
+## Notable problems in the previous SRA Boards
 - ### **The Simultaneous Power Supply Issue**
     - ESP32 can be power using two ways - one via the USB port given on the ESP32 and two via providing a voltage on VIN pin.
     - In the SRA Board 2019, if simultaneous power (on both the above sources) was provided to the ESP32 then it won't work as there was no circuitry for handling such a condition.
@@ -222,7 +195,7 @@ In general, every development board has the following basic features:
         - There is an inbuilt BAT760 diode on the USB line on ESP32. If different voltages are applied at Vusb and Vin, then the voltage with bigger magnitude will be given to LD1117 (LDO on ESP32); often the voltage will be the same on Vin and Vusb i.e 5V.
         - But, the usage of the SS14 (currently, 1N5417 in previous edition) diode on the Vin path, which has more **Vf** (forward voltage) than the BAT760, will create a voltage indifference and in a simultaneous power supply condition, USB will be selected as its voltage will be more than Vin.
 
-## Notable problems in the current SRA Board 2024
+## Notable problems in the current SRA Board
 - ### **The High Frequency RF noise Issue**
     - Currently 300rpm rated BO motors were ultilised for application. These are brushed DC motors functioning currently on 12v working on PWM concept.
     - These BO motors drain a lot of current during operation. **90 - 100 mA** - during *normal operation*.
@@ -241,12 +214,13 @@ In general, every development board has the following basic features:
         - View this issue [#14](https://github.com/SRA-VJTI/sra-board-hardware-design/issues/14) for more details and advancements on the suggested solutions.
         - The above error didnot occur when L298 motor driver was used with the same setup.
         - Using N20 geared motors which draw relatively less current did not throw an error.
+        - MPU can be taken upwards on the board itself rather than keeping it below near the motors so that noise can be minimized.        
         - Task is to figure out an economical alternative considering it to be a hardware issue.
 
 
 ## 3D Models
 
-1. The complete 3D model (.step) file of [SRA Board 2023-24](./3d_models/sra_board_model/sra_dev_board_2023-24.step)
+1. The complete 3D model (.step) file of [SRA Board 2024](./3d_models/sra_board_model/sra_dev_board_2024.step)
 2. The 3D models of motor driver, LEDs, ESP32 etc.: [3d models of other components](./3d_models/)
 
 <!-- Milestone -->
@@ -269,7 +243,7 @@ In general, every development board has the following basic features:
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
 ## Acknowledgements and Resources
 
-- Previous Edition: [SRA Board 2022-23](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.4)
+- Previous Edition: [SRA Board 2023](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.4)
 - [KiCAD Tutorials](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB)
 - [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
