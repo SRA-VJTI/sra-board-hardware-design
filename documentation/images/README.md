@@ -7,44 +7,33 @@
 ## Top Silkscreen
 
 <p align="center">
-<img width="520" height="630" src="board_images/top_silkscreen.png">
+<img width="580" height="500" src="board_images/front_silkscreen.png">
 </p>
 
 ## Bottom Silkscreen
 
 <p align="center">
-<img width="520" height="630" src="board_images/bottom_silkscreen.png">
+<img width="580" height="500" src="board_images/bottom_silkscreen.png">
 </p>
 
 ## Top Layer
 
 <p align="center">
-<img width="520" height="606" src="board_images/top_layer.png">
+<img width="520" height="606" src="board_images/routing_front.png">
 </p>
 
 ## Bottom Layer
 
 <p align="center">
-<img width="520" height="606" src="board_images/bottom_layer.png">
+<img width="520" height="606" src="board_images/routing_bottom.png">
 </p>
 
 ## Both Layers
 
 <p align="center">
-<img width="520" height="606" src="board_images/both_layer.png">
+<img width="520" height="606" src="board_images/routing_both.png">
 </p>
 
-## Top Layer with Polygon
-
-<p align="center">
-<img width="436" height="606" src="board_images/top_layer_polygon.png">
-</p>
-
-## Bottom Layer with Polygon
-
-<p align="center">
-<img width="436" height="556" src="board_images/bottom_layer_polygon.png">
-</p>
 
 ## Front
 
