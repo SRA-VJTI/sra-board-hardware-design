@@ -1,4 +1,5 @@
 <!-- PROJECT LOGO -->
+
 [![Stargazers][stars-shield]][stars-url]
 [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
@@ -15,30 +16,31 @@
   <p align="center">
     ESP32-based Development Board
     <br />
-    <a href="https://github.com/SRA-VJTI/sra-board-hardware-design/tree/master/sra_dev_board_2025">KiCAD</a>
+    <a href="./sra_dev_board_2026">KiCAD</a>
     ·
-    <a href="https://github.com/Vishal-Mutha/sra-board-hardware-design/tree/master/gerbers">Gerber</a>
+    <a href="./gerber_sra_dev_board">Gerber</a>
     ·
-    <a href="https://github.com/Vishal-Mutha/sra-board-hardware-design/blob/master/documentation/images/board_images/front.png">Images</a>
+    <a href="./documentation/images/board_images/front.png">Images</a>
     ·
-    <a href="https://a360.co/3c1Rjyv">3D Model</a>
+    <a href="./3d_models/sra_board_model/sra_dev_board_2026.step">3D Model</a>
   </p>
 
+# SRA Board 2026
 
-# SRA Board 2025
+The SRA board is a development board based on ESP32 with on-board peripherals like a programmable LED matrix, switches, sensor ports for Line Sensor Array and MPU-6050, protection circuit for over-current and reverse voltage, and motor drivers.
 
-The SRA board is a development board based on ESP32 with on-board peripherals like programmable LEDs, switches, sensor ports for Line Sensor Array and MPU-6050, protection circuit for over-current and reverse voltage and motor drivers.
-
-![](/documentation/images/board_images/front_side_1.png)
+![](./documentation/images/board_images/front_view_1.png)
 
 ## Table of Contents
-- [SRA Board 2025](#sra-board-2025)
+
+- [SRA Board 2026](#sra-board-2026)
   - [Table of Contents](#table-of-contents)
   - [Board Images](#board-images)
   - [About the Project](#about-the-project)
   - [Getting Started with a Development Board](#getting-started-with-a-development-board)
-  - [Notable problems in the previous SRA Boards](#notable-problems-in-the-previous-sra-boards)
   - [Notable problems in the current SRA Board](#notable-problems-in-the-current-sra-board)
+  - [Improvements Suggested for Future Iterations](#improvements-suggested-for-future-iterations)
+  - [Potential Future Enhancements](#potential-future-enhancements)
   - [3D Models](#3d-models)
   - [Milestones](#milestones)
   - [Contributors](#contributors)
@@ -46,6 +48,7 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
   - [License](#license)
 
 ## Board Images
+
 - **Frontside**
 <p align="center">
   <img width="410" height="450" src="./documentation/images/board_images/front.png">
@@ -59,9 +62,9 @@ The SRA board is a development board based on ESP32 with on-board peripherals li
 ## About the Project
 
 - This development board is used for the [Wall-E](https://github.com/SRA-VJTI/Wall-E) and [MARIO](https://github.com/SRA-VJTI/MARIO) workshops conducted by [SRA](https://github.com/SRA-VJTI).
-- Designed using KiCAD. The schematic and board files are [here](https://github.com/AtharvaAtre/SRA-Board/tree/master/sra_dev_board_2025).
-- Resources for [previous work](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.2).  For more details of the SRA board 2020, checkout this [link](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.4).
-- The SRA board 2023 images can be found [here](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.4/documentation/images).
+- Designed using KiCAD. The schematic and board files are [here](./sra_dev_board_2026).
+- Resources for [previous work](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.5). For more details of the SRA board 2024, checkout this [link](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.4).
+- The SRA board 2023 images can be found [here](https://github.com/SRA-VJTI/sra-board-hardware-design/tree/v2.3/documentation/images).
 - Older versions of the board and miscellaneous designs can be found [here](https://github.com/SRA-VJTI/PCB-Schematics-and-Layouts).
 
 ## Getting Started with a Development Board
@@ -74,154 +77,149 @@ In general, every development board has the following basic features:
 
 - ### Power Supply Unit
   - Microcontrollers (MCUs) usually run on 3.3V or 5V logic supply voltage while input to a development board is normally 12V for motor and driving/controlling peripheral devices.
-  - So, in order to have a single input source, a *power* section which inter converts this 12V to standard levels like 5V & 3.3V for MCU and sensors is present.This is achieved using a step-down [buck regulator](https://www.youtube.com/watch?v=m8rK9gU30v4).
-  - Buck Regulator IC [LM2576-S-5](./datasheets/lm2576_buck_regulator.pdf) is used for stepping down the voltage from 12V to 5V DC. This 5V is further regulated to 3.3V using LDO IC [AMS1117-3.3](./datasheets/ams1117_ldo.pdf).
-  - The previous edition of the SRA board (2023) also used a similar buck regulator setup.
-  - The older editions of the SRA board used the LM7805 linear voltage regulator, for stepping down from 12V to 5V; this powered the ESP32. Further, this 5V was converted to 3.3V using the LD33 linear voltage regulator, used by the sensor port.
+  - So, in order to have a single input source, a _power_ section which inter converts this 12V to standard levels like 5V & 3.3V for MCU and sensors is present.This is achieved using a step-down [buck regulator](https://www.youtube.com/watch?v=m8rK9gU30v4).
+  - Buck Regulator IC [MP1584](./datasheets/MP1584_buck.pdf) is used in the current SRA Board 2026 for stepping down the voltage from 12V to 5V DC. This 5V is further regulated to 3.3V using LDO IC [AMS1117-3.3](./datasheets/ams1117_ldo.pdf). The MP1584 is a more compact and efficient alternative compared to the previous LM2576-S.
+  - The previous edition of the SRA board (2025) used the [LM2576-S-5](./datasheets/lm2576_buck_regulator.pdf) buck regulator, while earlier editions used the LM7805 linear voltage regulator for stepping down from 12V to 5V.
+  - The older editions of the SRA board used the LD33 linear voltage regulator for converting 5V to 3.3V at the sensor port.
 
 - ### Motor Driver
-    - Motors usually run on 12V and MCU output is generally 5V/3.3V. So, an external motor driver circuitry is required to control motors according to the MCU input.
-    - The current and previous editions of SRA board use the [TB6612FNG](./datasheets/TB6612FNG_motor_driver.pdf) Motor Driver, which is a MOS-based H-Bridge motor driver.
-    - The older editions of SRA Board used the L298N IC for motor-control, which is a BJT-based H-Bridge motor driver.
+  - Motors usually run on 12V and MCU output is generally 5V/3.3V. So, an external motor driver circuitry is required to control motors according to the MCU input.
+  - The current and previous editions of SRA board use the [TB6612FNG](./datasheets/TB6612FNG_motor_driver.pdf) Motor Driver, which is a MOS-based H-Bridge motor driver.
+  - The older editions of SRA Board used the L298N IC for motor-control, which is a BJT-based H-Bridge motor driver.
 
 - ### Sensor Port
-    - According to the external sensor types, usually development boards have onboard sensor ports where the sensors can be connected easily. [LSA - Line Sensor Array]() and [MPU- Motion Processing Unit]() have on-board connection ports.
-    - The current edition uses easily available and efficient [JST XH connectors](https://en.wikipedia.org/wiki/JST_connector).
-    - Previous versions used bulky [FRC connectors](https://www.sunrom.com/c/frc-idc-flat-cable-box-header#:~:text=FRC%20(Flat%20Ribon%20Cable)%20are,from%206%20to%2064%20pins.)
+  - According to the external sensor types, usually development boards have onboard sensor ports where the sensors can be connected easily. [LSA - Line Sensor Array]() and [MPU- Motion Processing Unit]() have on-board connection ports.
+  - The current edition uses easily available and efficient [JST XH connectors](https://en.wikipedia.org/wiki/JST_connector).
+  - Previous versions used bulky [FRC connectors](<https://www.sunrom.com/c/frc-idc-flat-cable-box-header#:~:text=FRC%20(Flat%20Ribon%20Cable)%20are,from%206%20to%2064%20pins.>)
 
 - ### Protection against [Reverse Voltage](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjc8aaX1c3rAhXXXSsKHXphBgQQFjABegQICxAD&url=https%3A%2F%2Fwww.ti.com%2Flit%2Fpdf%2Fslva139&usg=AOvVaw0Qbub75JJ986MzLv6FYWKE)
-    - The SRA Boards use diodes for reverse voltage protection in the power-line.
-    - 12V Motor line and power regulated line have been separated with [SS34](./datasheets/ss34_3A_schottky_diode.pdf) and [SS24](./datasheets/ss24_2A_schottky_diode.pdf) schottky diodes respectively.
+  - The SRA Boards use diodes for reverse voltage protection in the power-line.
+  - 12V Motor line and power regulated line have been separated with [SS34](./datasheets/ss34_3A_schottky_diode.pdf) and [SS54](./datasheets/ss24_2A_schottky_diode.pdf) schottky diodes respectively.
 
 - ### Protection against [Over Current](https://www.baypower.com/blog/what-is-overcurrent-protection/#:~:text=Overcurrent%20protection%20is%20the%20method,of%20a%20piece%20of%20equipment.)
-    - Earlier, for the overcurrent protection of MCU and motor driver circuit, bulky glass fuses of 300mA and 3A were used respectively. After breakdown, they used to be replaced.
-    - In the recent versions of the board, these were replaced with compact, PTC Resettable Fuses.
-    - On 12V line - [RXEF160](./datasheets/RUEF160_3,2A_trip_ptc_fuse.pdf) : 1.6A hold current; 3.2A trip current Fuse was used.
-    - On 5V line - [RXEF160](./datasheets/RXEF050_1A_trip_ptc_fuse.pdf) : 0.5A hold current; 1A trip current Fuse was used.
+  - Earlier, for the overcurrent protection of MCU and motor driver circuit, bulky glass fuses of 300mA and 3A were used respectively. After breakdown, they used to be replaced.
+  - In the recent versions of the board, these were replaced with compact, PTC Resettable Fuses.
+  - On 12V line - [RXEF160](./datasheets/RUEF160_3,2A_trip_ptc_fuse.pdf) : 1.6A hold current; 3.2A trip current Fuse was used.
+  - On 5V line - [RXEF160](./datasheets/RXEF050_1A_trip_ptc_fuse.pdf) : 0.5A hold current; 1A trip current Fuse was used.
 - ### Programmable Switches and LEDs
-    - Every development board should have some programmable switches and LEDs for testing, control and debugging purposes.
-    - The current editions has an array of 8 programmable LEDs and switches.
-    - The previous edition had a pair of programmable switches and programmable LEDs each.
+  - Every development board should have some programmable switches and LEDs for testing, control and debugging purposes.
+  - The current SRA Board 2026 features a 6x5 LED matrix (30 LEDs total) controlled via shift registers, which provides enhanced debugging capabilities and expressive visual feedback while reducing GPIO usage compared to discrete LEDs.
+  - The previous edition (2025) had an array of 8 programmable discrete LEDs and switches.
+  - The earlier editions had fewer programmable switches and LEDs for testing and control purposes.
 
 - ### Power Switch
-    - All versions have a power switch for the motor driver, using which power supply to the motor driver can be toggled. Similarly, there was a switch for the ESP32 MCU.
+  - All versions have a power switch for the motor driver, using which power supply to the motor driver can be toggled. Similarly, there was a switch for the ESP32 MCU.
 
+> Now that we covered basics of development boards, let us talk about the changes made in the new design.
 
-> Now that we covered basics of development boards, let us talk about the changes made in the new design. 
+## Changes IN SRA Board Over the years from 2022-2026
 
-## Major Changes IN SRA Board Over the years from 2021-2025
-| Feature  |  SRA Board 2021  | SRA Board 2022 | SRA Board 2023 | SRA Board 2024 | SRA Board 2025 |
-|:----:|:-------:| :-----: | :-----: | :-----: | :-----: |
-|12V to 5V| LM2596 Buck Convertor | LM2596 Buck Converter | LM2576-S Buck Converter | LM2576-S Buck Converter | LM2576-S Buck Converter |
-|Reverse Voltage Protection| P-MOSFET | Diodes | Diodes | Diodes | Diodes |
-|Line Sensing Arrays (LSA)| Photodiodes| Photodiodes| IR Sensors| IR Sensors | IR Sensors |
-|Number of LSA Sensors| 4| 4| 5| 5 | 5 |
-|Motor Driver| TB6612FNG| TB6612FNG | TB6612FNG | TB6612FNG | TB6612FNG |
-|Stepper Motor Driver| - | - | A4988 | - | - |
-|No. of DC Motor Channels|4|4|2|2|2|
-|No. of Stepper Motor Channels|0|0|1|1|0|
-|No. of Switches|4|4|4|2|2|
-|No. of LEDs|8|8|8|8|8|
-|Over Current Protection| Bulky Glass Fuses | PTC Resettable Fuses | PTC Resettable Fuses| PTC Resettable Fuses | PTC Resettable Fuses |
-|Sensor Port Connectors| JST (Japan Solderless Terminal) Connectors | JST (Japan Solderless Terminal) Connectors | JST Connectors | JST Connectors | JST Connectors |
-|Component Type and Board Size| THT (Through Hole), Big | SMD(Surface Mount Device), Smaller | SMD(Surface Mount Device), Smaller| SMD(Surface Mount Device), Smaller | SMD(Surface Mount Device), Smaller |
-|ESP32 Module| Not Integrated | Not Integrated | Not Integrated | Not Integrated | Mounted and Soldered to PCB |
-|Flashing Port| Micro USB | Micro USB | Micro USB | Micro USB | Type-C |
-
-
+|            Feature            |               SRA Board 2022               |           SRA Board 2023           |           SRA Board 2024           |           SRA Board 2025           |            SRA Board 2026            |
+| :---------------------------: | :----------------------------------------: | :--------------------------------: | :--------------------------------: | :--------------------------------: | :----------------------------------: |
+|           12V to 5V           |           LM2596 Buck Converter            |      LM2576-S Buck Converter       |      LM2576-S Buck Converter       |      LM2576-S Buck Converter       |        MP1584 Buck Converter         |
+|  Reverse Voltage Protection   |                   Diodes                   |               Diodes               |               Diodes               |               Diodes               |                Diodes                |
+|   Line Sensing Arrays (LSA)   |                Photodiodes                 |             IR Sensors             |             IR Sensors             |             IR Sensors             |              IR Sensors              |
+|     Number of LSA Sensors     |                     4                      |                 5                  |                 5                  |                 5                  |                  5                   |
+|         Motor Driver          |                 TB6612FNG                  |             TB6612FNG              |             TB6612FNG              |             TB6612FNG              |              TB6612FNG               |
+|     Stepper Motor Driver      |                     -                      |               A4988                |                 -                  |                 -                  |                  -                   |
+|   No. of DC Motor Channels    |                     4                      |                 2                  |                 2                  |                 2                  |                  2                   |
+| No. of Stepper Motor Channels |                     0                      |                 1                  |                 0                  |                 0                  |                  0                   |
+|        No. of Switches        |                     4                      |                 4                  |                 2                  |                 2                  |                  2                   |
+|          No. of LEDs          |                     8                      |                 8                  |                 8                  |                 8                  | 6x5 LED Matrix (via Shift Registers) |
+|    Over Current Protection    |            PTC Resettable Fuses            |        PTC Resettable Fuses        |        PTC Resettable Fuses        |        PTC Resettable Fuses        |         PTC Resettable Fuses         |
+|    Sensor Port Connectors     | JST (Japan Solderless Terminal) Connectors |           JST Connectors           |           JST Connectors           |           JST Connectors           |            JST Connectors            |
+| Component Type and Board Size |     SMD(Surface Mount Device), Smaller     | SMD(Surface Mount Device), Smaller | SMD(Surface Mount Device), Smaller | SMD(Surface Mount Device), Smaller |  SMD(Surface Mount Device), Smaller  |
+|         ESP32 Module          |               Not Integrated               |           Not Integrated           |           Not Integrated           |    Mounted and Soldered to PCB     |     Mounted and Soldered to PCB      |
+|         Flashing Port         |                 Micro USB                  |             Micro USB              |             Micro USB              |               Type-C               |                Type-C                |
 
 - ### **Compatiblity of SRA Board with Battery [3- 3.3V 2500mAh Batteries](https://robu.in/product/bak-nmc-18650-2500mah-8c-lithium-ion-battery/?gad_source=1&gclid=Cj0KCQjw6PGxBhCVARIsAIumnWb20iyJUEXE8V6eAfSambP35PfBsSFKje-ALjyNniqGYCW_kz3IbcQaAoeGEALw_wcB)**
-    - This years SRA Board(2023-24) is compatible with batteries which have an external **[BMS(Battery Management System)](https://robu.in/product/3s-10a-12v-18650-lithium-battery-charger-board-protection-module/)**.
-    - The BMS helps in maintaining an optimal voltage and disconnects itself when battery voltage drops below a significant voltage.
-    - ALso the BMS helps in equal charging and discharging of 3 cells being used as a battery unit and thus helping in increasing the life/health of the battery.
-    - ### **7805 (5V linear regulator) to [LM2576/96 Buck Convertor](https://www.youtube.com/watch?v=m8rK9gU30v4)**
-    - The greater efficiency, output current and reliability of LM2576/96 were the reasons for this change.
-    - The efficiency of LM2576 is up to 92% which is significantly better than 7805. The LM2576 can provide current up to 3A, so  the MARIO workshop manipulator can now be run using onboard regulator.
+  - The SRA Board is compatible with **3-cell (3S) Lithium-ion battery packs** which use an external **[BMS (Battery Management System)](https://robu.in/product/3s-10a-12v-18650-lithium-battery-charger-board-protection-module/)**.
+  - The BMS helps maintain safe operating voltages and disconnects the battery when the voltage drops below a safe limit.
+  - It also ensures balanced charging and discharging of the three cells, improving the overall health and lifetime of the battery pack.
+
+- ### **7805 (5V linear regulator) to [LM2576/96 Buck Convertor](https://www.youtube.com/watch?v=m8rK9gU30v4)**
+  - The higher efficiency, output current capability and reliability of LM2576/96 were the primary reasons for this change.
+  - The efficiency of LM2576 can reach up to **~92%**, which is significantly better than the 7805 linear regulator.
+  - The LM2576 can provide currents up to **3A**, allowing peripherals such as the MARIO workshop manipulator to be powered using the onboard regulator.
+
 - ### **LD33 (3.3V) to [AMS1117](http://www.advanced-monolithic.com/pdf/ams1117.pdf)**:
-    - The older editions used the LD33 IC to step down from 5V to 3.3V; several discussions resulted in the shift to more compact, reliable AMS1117-3.3(SOT-23) linear voltage regulator. (_AMS1117 is also used on-board on the ESP32-DevKitC V4 module_)
+  - Older editions used the **LD33 IC** to step down from 5V to 3.3V.
+  - This was later replaced with the **AMS1117-3.3 LDO**, which is more compact and widely used for stable 3.3V regulation.
+  - (_AMS1117 is also used on the ESP32-DevKitC V4 module._)
 
 - ### **Reverse voltage protection: Diodes to P-MOSFET**
-    - Diodes in series to the power line are inefficient as compare to a P-MOSFET. Dut to the usage of high-rated motors, it was difficult to manage the diode size and the current rating. (_As the current rating of diode increases, its size also increases._)So, the previous version uses the P-MOSFET instead of a diode, which is more efficient and can handle more current.
-    - In the current edition, SMD diodes are used, hence rating and size is no longer an issue.
+  - Diodes placed in series with the power line introduce voltage drop and power loss compared to a **P-MOSFET based protection circuit**.
+  - Due to the higher current requirements of the motors, managing diode size and current rating became difficult.
+  - Therefore, earlier versions used a **P-MOSFET based reverse polarity protection circuit**, which is more efficient and can handle higher currents.
+  - In the current edition, **SMD Schottky diodes** are used, making size and rating less of an issue.
 
 - ### **Component Type and Board Size**:
-    - In the previous and older editions, THT or PTH(Plated through hole) components were used, which take up a lot of space and their size increases with increasing rating.
-    - In the current edition, the component layout is changed,stepper motor driver is removed and the board is made battery compatible necessary changes for the same where done.
-    - Current Board Dimensions: **81mm x 92.68mm**
+  - In the previous editions, THT/PTH (Through-Hole) components were used, which occupied more board area and increased in size with higher power ratings.
+  - In the current edition, the design adopts a more compact SMD-based layout. The LM2576 buck converter has been replaced with the smaller MP1584 regulator, and the discrete LED array has been replaced with a 6×5 LED matrix driven using shift registers.
+  - Current Board Dimensions: **90mm x 90mm**
 
-- ### **L298N to [TB6612FNG](https://dronebotworkshop.com/tb6612fng-h-bridge/)**
-    - L298N is a BJT-based H-bridge motor driver but it is less efficient as compared to the new MOS-based TB6612FNG.
-    - The detailed comparison is shown below. As you can see the efficiency of TB6612FNG can reach up to 91-95% which is significantly higher than the 40-70% efficiency of L298N.
-    - The only drawback of TB6612FNG is the less continuous current which is equal to 1.2A.
-    
+- ### **L298N vs [TB6612FNG](https://dronebotworkshop.com/tb6612fng-h-bridge/)**
+  - L298N is a BJT-based H-bridge motor driver but it is less efficient as compared to the new MOS-based TB6612FNG.
+  - The detailed comparison is shown below. As you can see the efficiency of TB6612FNG can reach up to 91-95% which is significantly higher than the 40-70% efficiency of L298N.
+  - The only drawback of TB6612FNG is the less continuous current which is equal to 1.2A.
     <p align="center">
         <img width="460" height="300" src="https://i1.wp.com/dronebotworkshop.com/wp-content/uploads/2019/12/TB6612-vs-L298N.jpeg?w=768&ssl=1">
     </p>
-- ### **Stepper Motor Driver Port ([A4988](https://www.tme.eu/Document/25459777e672c305e474897eef284f74/POLOLU-2128.pdf))**(Not present in 2023-24 and further)
-    - In the Previous and older editions, there were two ports for TB6612FNG Motor Drivers but **it has been updated to one TB6612FNG and one A4988 Stepper Motor Driver in the current SRA Board (2023).** 
-    - A4988 Stepper Motor Driver **a microstepping driver for controlling bipolar stepper motors** which has built-in translator for easy operation. This means that we can control the stepper motor with just 2 pins from our controller, or one for controlling the rotation direction and the other for controlling the steps.
-    - The Driver provides five different step resolutions: full-step, haft-step, quarter-step, eight-step and sixteenth-step. Also, it has a potentiometer for adjusting the current output, over-temperature thermal shutdown and crossover-current protection.
-    <p align="center">
-        <img width="460" height="300" src="./documentation/assets/A4988_Stepper_Motor.png">
-    </p>
-
-- ### **Moving back from the vintage Bar-graph LEDs to LED array and more switches**
-    - The older edition used a pair of programmable switches and LEDs each.
-    - Since the previous edition, the number of debuggable switches has been increased to 4.
-    - The previous edition used an LED voltage bar-graph array of 10 LEDs which was very bulky.
-    - In the current edition, 10 SMD LEDs arranged in an array out of which two are reserved for 5V and 3.3V voltage indication have been used.
-    -  So there are 8 programmable LEDs on the board. These LEDs multiplexed with directional pins of the two motor drivers to save pins.
-    -  Directional pins? >> Every motor driver channel has two directional pins IN1, IN2. If IN1 is high and IN2 is low then motors move in a clockwise direction and there are 4 channels on the board, so 4 * 2 = 8 directional pins are multiplexed with 8 programmable LEDs.
-    -  With 8 LEDs in hand, debugging get easier. Some examples -
-        1. According to the line sensor array (LSA) data, one can program 4 LEDs to turn on when the line sensor detects white  and turn off for black- line following debugging.
-        2. If a motor is moving in a forward direction, the dedicated LEDs will be indicating IN1 is high and IN2 is low - motor control debugging.
 
 
-## Notable problems in the previous SRA Boards
-- ### **The Simultaneous Power Supply Issue**
-    - ESP32 can be power using two ways - one via the USB port given on the ESP32 and two via providing a voltage on VIN pin.
-    - In the SRA Board 2019, if simultaneous power (on both the above sources) was provided to the ESP32 then it won't work as there was no circuitry for handling such a condition.
-    - The following disclaimer from the official ESP32 documentation made it essential to design some external circuit to handle this condition and accordingly pass only one signal to the ESP32 board.
-    > *The power supply must be provided using one and only one of the above options.Otherwise, the board and/or the power supply source can be damaged.*
-    - #### Solution
-        - The solution for this issue was [Diode Auctioneering](http://doerry.org/norbert/papers/20190606-doerry-ashton-auctioneering-diodes.pdf).
+- ### **LED System**
 
-        <p align="center">
-            <img width="460" height="300" src="./documentation/assets/diode_vin.png"/>
-        </p>
+  - Earlier versions of the board used a set of discrete programmable LEDs for debugging and status indication. In the SRA Board 2026, this has been replaced with a **6×5 LED matrix driven using shift registers**.  
+  - This significantly reduces GPIO usage while allowing more flexible visual debugging and status indication patterns.
 
-        - There is an inbuilt BAT760 diode on the USB line on ESP32. If different voltages are applied at Vusb and Vin, then the voltage with bigger magnitude will be given to LD1117 (LDO on ESP32); often the voltage will be the same on Vin and Vusb i.e 5V.
-        - But, the usage of the SS14 (currently, 1N5417 in previous edition) diode on the Vin path, which has more **Vf** (forward voltage) than the BAT760, will create a voltage indifference and in a simultaneous power supply condition, USB will be selected as its voltage will be more than Vin.
+## Notable problems in the current SRA Board
 
-## Notable problems in the previous SRA Board 
-- ### **The High Frequency RF noise Issue**
-    - Currently 300rpm rated BO motors were ultilised for application. These are brushed DC motors functioning currently on 12v working on PWM concept.
-    - These BO motors drain a lot of current during operation. **90 - 100 mA** - during *normal operation*.
-    But they drain about **600 - 700 mA** current - during *momentary or forced stalling*. Momentary stalling happens by itself.
-    - For self balancing operation - the MCU communicates with MPU6050 for the current orientational readings and accordingly gives commands to the motor driver and thus the motors.
-    - When this PWM goes over 50% duty cycle, the error in MPU readings become large and the motor rotate with full speed, thus not self-balancing the setup.
-    - The following inspections were carried out os far so solve this issue.
+- ### **Buck Converter Stability Issue (MP1584)**
+  - The SRA Board 2026 uses the **MP1584 buck converter** to step down 12V to 5V.
+  - While the device allowed a significant reduction in the power section size compared to LM2576, irregular behaviour was observed under **higher load conditions**.
+  - During heavy load scenarios involving motors and other peripherals, the **5V rail occasionally showed instability**, which may affect the overall system reliability.
 
-    - #### Inspections
-        - The static noise or low-frequecy noise generated by BO Motors was eliminated by soldering a 0.1uF ceramic capacitor across its terminals.
-        - Initially, the longer length of the I2C line route + cable from the MPU6050 to the ESP32 was suspected to be the main culprt. However, the MPU was checked for I2C packet drop, which when observed under the a DSO, seemed pretty fine. While reading the Motion data, both the SDA and SCLK lines go high.
-        - The dynamic high-frequency noise wasnt getting eliminated which is produced to the brush action of brushed DC motors. Finally adding [**ferrite beads**](https://www.youtube.com/watch?v=O39inZIscOI) across the motor terminals and using twisted cable pairs to connect it to the board lessened the RF noise to an extent.
-        - Although, the above solution only facililated in lessening the frequency of system going into error. Also, the duty cycle was forced to be under 50% for opltimal application.
 
-    - #### Possible Solutions
-        - View this issue [#14](https://github.com/SRA-VJTI/sra-board-hardware-design/issues/14) for more details and advancements on the suggested solutions.
-        - The above error didnot occur when L298 motor driver was used with the same setup.
-        - Using N20 geared motors which draw relatively less current did not throw an error.
-        - MPU can be taken upwards on the board itself rather than keeping it below near the motors so that noise can be minimized.        
-        - Task is to figure out an economical alternative considering it to be a hardware issue.
+- ### **USB Type-C Connector Mechanical Strength Issue**
+  - The board currently uses a **16-pin USB Type-C connector** for programming and power.
+  - In practical usage, the connector was found to be **mechanically weak**, and in some cases it could loosen or detach from the PCB after repeated cable insertion or mechanical stress.
 
+- ### **Power Switch Issue**
+  - There are two dpdt power toggle switch used on board. One to toggle the supply of 12v to the whole board and one to toggle the supply of 5v to the logic circuit.
+  - Instead it should have been toggling 12v supply to the motors and toggling 12v supply to the whole board.
+
+
+## Improvements Suggested for Future Iterations
+
+Based on the current design of the SRA Board 2026, the following improvements are recommended for future iterations:
+
+- **Replace MP1584 with TPS562202**: The TPS562202 offers improved reliability and enhanced long-term robustness compared to the current MP1584 buck converter. This component provides better thermal performance and more stable regulation across varying load conditions.
+
+- **Upgrade to USB-C 6P Connector**: Replace the current Type-C connector with a robust USB-C 6P connector configuration. This simplifies soldering procedures, improves mechanical strength, and enhances durability during repeated connection cycles.
+
+- **Add Unconnected UART Solder Pads (RX, TX)**: Incorporate unconnected solder pads for UART receive and transmit lines on the PCB. This allows the board to optionally function as a USB-to-TTL interface, extending its utility beyond standalone development applications.
+
+## Potential Future Enhancements
+
+The following experimental features and enhancements are being considered for future versions of the SRA Board but are not yet integrated into the 2026 iteration:
+
+- **Onboard IMU Integration**: Direct integration of an Inertial Measurement Unit (IMU) for advanced motion sensing applications, eliminating the need for external MPU6050 connections.
+
+- **Camera FFC/FPC Connector**: Addition of a Flat Flex Cable (FFC) or Flexible Printed Circuit (FPC) connector to support camera modules, enabling vision-based robotics projects and computer vision applications.
+
+- **Integrated Motor Driver**: Direct onboarding of motor driver circuits instead of requiring external TB6612FNG modules, reducing component count and improving form factor.
+
+- **CH340 to CP2102 Upgrade**: Replacing the CH340 USB-to-UART bridge with CP2102 for improved reliability, driver support across multiple operating systems, and better stability in industrial environments.
+
+These enhancements represent opportunities for evolution of the platform and will be explored as future iterations of the board are developed.
 
 ## 3D Models
 
-1. The complete 3D model (.step) file of [SRA Board 2025](./3d_models/sra_board_model/sra_dev_board_2025.step)
+1. The complete 3D model (.step) file of [SRA Board 2026](./3d_models/sra_board_model/sra_dev_board_2026.step)
 2. The 3D models of motor driver, LEDs, ESP32 etc.: [3d models of other components](./3d_models/)
 
 <!-- Milestone -->
+
 ## Milestones
 
 - [x] Designing of the prototype board
@@ -229,18 +227,19 @@ In general, every development board has the following basic features:
 - [x] Testing of prototype board
 - [x] Final version
 - [x] Making the board Battery Compatible
-- [ ] Resolving high frequency noise by BO Motors ( TB6612FNG )
+- [x] Onboard ESP32 Module
 
 <!-- CONTRIBUTORS -->
+
 ## Contributors
 
-- [Atharva Atre](https://github.com/AtharvaAtre): *Designer*
-- [Dhairya Shah](https://github.com/dhairyashah1): *Mentor*
-- [Mahesh Tupe](https://github.com/Asc91): *Mentor*
+- [Vishal Mutha](https://github.com/Vishal-Mutha): _Designer_
+- [Atharva Atre](https://github.com/AtharvaAtre): _Mentor_
 <!-- ACKNOWLEDGEMENTS AND REFERENCES -->
+
 ## Acknowledgements and Resources
 
-- Previous Edition: [SRA Board 2024](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.5)
+- Previous Edition: [SRA Board 2025](https://github.com/SRA-VJTI/sra-board-hardware-design/releases/tag/v2.5)
 - [KiCAD Tutorials](https://www.youtube.com/playlist?list=PL3bNyZYHcRSUhUXUt51W6nKvxx2ORvUQB)
 - [README Template](https://github.com/roshanlam/ReadMeTemplate) by [roshanlam](https://github.com/roshanlam)
 
@@ -248,15 +247,11 @@ In general, every development board has the following basic features:
 
 - Distributed under the [MIT License](https://github.com/SRA-VJTI/sraboard-hardware-design/blob/master/LICENSE).
 
-
-[forks-shield]:https://img.shields.io/github/forks/SRA-VJTI/sra-board-hardware-design
+[forks-shield]: https://img.shields.io/github/forks/SRA-VJTI/sra-board-hardware-design
 [forks-url]: https://github.com/SRA-VJTI/sra-board-hardware-design/network/members
-
 [stars-shield]: https://img.shields.io/github/stars/SRA-VJTI/sra-board-hardware-design
 [stars-url]: https://github.com/SRA-VJTI/sra-board-hardware-design/stargazers
-
 [issues-shield]: https://img.shields.io/github/issues/SRA-VJTI/sra-board-hardware-design
 [issues-url]: https://github.com/SRA-VJTI/sra-board-hardware-design/issues
-
 [license-shield]: https://img.shields.io/github/license/SRA-VJTI/sra-board-hardware-design
 [license-url]: https://github.com/SRA-VJTI/sra-board-hardware-design/blob/master/LICENSE
