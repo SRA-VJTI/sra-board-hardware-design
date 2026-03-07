@@ -112,25 +112,25 @@ In general, every development board has the following basic features:
 
 > Now that we covered basics of development boards, let us talk about the changes made in the new design.
 
-## Changes IN SRA Board Over the years from 2022-2026
+## Changes IN SRA Board Over the years from 2024-2026
 
-|            Feature            |               SRA Board 2022               |           SRA Board 2023           |           SRA Board 2024           |           SRA Board 2025           |            SRA Board 2026            |
-| :---------------------------: | :----------------------------------------: | :--------------------------------: | :--------------------------------: | :--------------------------------: | :----------------------------------: |
-|           12V to 5V           |           LM2596 Buck Converter            |      LM2576-S Buck Converter       |      LM2576-S Buck Converter       |      LM2576-S Buck Converter       |        MP1584 Buck Converter         |
-|  Reverse Voltage Protection   |                   Diodes                   |               Diodes               |               Diodes               |               Diodes               |                Diodes                |
-|   Line Sensing Arrays (LSA)   |                Photodiodes                 |             IR Sensors             |             IR Sensors             |             IR Sensors             |              IR Sensors              |
-|     Number of LSA Sensors     |                     4                      |                 5                  |                 5                  |                 5                  |                  5                   |
-|         Motor Driver          |                 TB6612FNG                  |             TB6612FNG              |             TB6612FNG              |             TB6612FNG              |              TB6612FNG               |
-|     Stepper Motor Driver      |                     -                      |               A4988                |                 -                  |                 -                  |                  -                   |
-|   No. of DC Motor Channels    |                     4                      |                 2                  |                 2                  |                 2                  |                  2                   |
-| No. of Stepper Motor Channels |                     0                      |                 1                  |                 0                  |                 0                  |                  0                   |
-|        No. of Switches        |                     4                      |                 4                  |                 2                  |                 2                  |                  2                   |
-|          No. of LEDs          |                     8                      |                 8                  |                 8                  |                 8                  | 6x5 LED Matrix (via Shift Registers) |
-|    Over Current Protection    |            PTC Resettable Fuses            |        PTC Resettable Fuses        |        PTC Resettable Fuses        |        PTC Resettable Fuses        |         PTC Resettable Fuses         |
-|    Sensor Port Connectors     | JST (Japan Solderless Terminal) Connectors |           JST Connectors           |           JST Connectors           |           JST Connectors           |            JST Connectors            |
-| Component Type and Board Size |     SMD(Surface Mount Device), Smaller     | SMD(Surface Mount Device), Smaller | SMD(Surface Mount Device), Smaller | SMD(Surface Mount Device), Smaller |  SMD(Surface Mount Device), Smaller  |
-|         ESP32 Module          |               Not Integrated               |           Not Integrated           |           Not Integrated           |    Mounted and Soldered to PCB     |     Mounted and Soldered to PCB      |
-|         Flashing Port         |                 Micro USB                  |             Micro USB              |             Micro USB              |               Type-C               |                Type-C                |
+|            Feature            |           SRA Board 2024           |           SRA Board 2025           |            SRA Board 2026            |
+| :---------------------------: | :--------------------------------: | :--------------------------------: | :----------------------------------: |
+|           12V to 5V           |      LM2576-S Buck Converter       |      LM2576-S Buck Converter       |        MP1584 Buck Converter         |
+|  Reverse Voltage Protection   |               Diodes               |               Diodes               |                Diodes                |
+|   Line Sensing Arrays (LSA)   |             IR Sensors             |             IR Sensors             |              IR Sensors              |
+|     Number of LSA Sensors     |                 5                  |                 5                  |                  5                   |
+|         Motor Driver          |             TB6612FNG              |             TB6612FNG              |              TB6612FNG               |
+|     Stepper Motor Driver      |                 -                  |                 -                  |                  -                   |
+|   No. of DC Motor Channels    |                 2                  |                 2                  |                  2                   |
+| No. of Stepper Motor Channels |                 0                  |                 0                  |                  0                   |
+|        No. of Switches        |                 2                  |                 2                  |                  2                   |
+|          No. of LEDs          |                 8                  |                 8                  | 6x5 LED Matrix (via Shift Registers) |
+|    Over Current Protection    |        PTC Resettable Fuses        |        PTC Resettable Fuses        |         PTC Resettable Fuses         |
+|    Sensor Port Connectors     |           JST Connectors           |           JST Connectors           |            JST Connectors            |
+| Component Type and Board Size | SMD(Surface Mount Device), Smaller | SMD(Surface Mount Device), Smaller |  SMD(Surface Mount Device), Smaller  |
+|         ESP32 Module          |           Not Integrated           |    Mounted and Soldered to PCB     |     Mounted and Soldered to PCB      |
+|         Flashing Port         |             Micro USB              |               Type-C               |                Type-C                |
 
 - ### **Compatiblity of SRA Board with Battery [3- 3.3V 2500mAh Batteries](https://robu.in/product/bak-nmc-18650-2500mah-8c-lithium-ion-battery/?gad_source=1&gclid=Cj0KCQjw6PGxBhCVARIsAIumnWb20iyJUEXE8V6eAfSambP35PfBsSFKje-ALjyNniqGYCW_kz3IbcQaAoeGEALw_wcB)**
   - The SRA Board is compatible with **3-cell (3S) Lithium-ion battery packs** which use an external **[BMS (Battery Management System)](https://robu.in/product/3s-10a-12v-18650-lithium-battery-charger-board-protection-module/)**.
